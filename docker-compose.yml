@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  maketeam-backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      
+  maketeam-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    depends_on:
+      - maketeam-backend 

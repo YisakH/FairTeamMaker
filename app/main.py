@@ -50,6 +50,26 @@ async def startup_event():
     ensure_file_exists(ATTENDING_FILE, [])
     ensure_file_exists(COOCCURRENCE_FILE, {})
     ensure_file_exists(TEAM_HISTORY_FILE, [])
+    
+    # 기존 파일 데이터 정렬
+    try:
+        # 참가자 목록 정렬
+        with open(PARTICIPANTS_FILE, "r", encoding='utf-8') as f:
+            participants = json.load(f)
+        if participants:
+            participants.sort()
+            with open(PARTICIPANTS_FILE, "w", encoding='utf-8') as f:
+                json.dump(participants, f, indent=2, ensure_ascii=False)
+                
+        # 참석자 목록 정렬
+        with open(ATTENDING_FILE, "r", encoding='utf-8') as f:
+            attending = json.load(f)
+        if attending:
+            attending.sort()
+            with open(ATTENDING_FILE, "w", encoding='utf-8') as f:
+                json.dump(attending, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"파일 정렬 중 오류 발생: {e}")
 
 @app.get("/")
 async def root():
@@ -82,6 +102,8 @@ async def add_participant(participant: Participant):
 
     # 참가자 목록에 추가
     participants.append(participant.name)
+    # 이름순으로 정렬
+    participants.sort()
     with open(PARTICIPANTS_FILE, "w", encoding='utf-8') as f:
         json.dump(participants, f, indent=2, ensure_ascii=False)
 
@@ -119,6 +141,8 @@ async def remove_participant(name: str):
         raise HTTPException(status_code=404, detail="참가자를 찾을 수 없습니다.")
 
     participants.remove(name)
+    # 정렬은 필요 없지만 일관성을 위해 여기서도 정렬 유지
+    participants.sort()
     with open(PARTICIPANTS_FILE, "w", encoding='utf-8') as f:
         json.dump(participants, f, indent=2, ensure_ascii=False)
 
@@ -189,7 +213,8 @@ async def update_attendance(update: AttendanceUpdate):
     elif not update.attending and update.name in attending:
         attending.remove(update.name)
 
-    # 참석자 목록 저장
+    # 참석자 목록 정렬 후 저장
+    attending.sort()
     with open(ATTENDING_FILE, "w", encoding='utf-8') as f:
         json.dump(attending, f, indent=2, ensure_ascii=False)
 

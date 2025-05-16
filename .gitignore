@@ -1,0 +1,15 @@
+# 기존 gitignore 내용 유지
+
+# 데이터 파일
+data/*.json
+!data/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/ 

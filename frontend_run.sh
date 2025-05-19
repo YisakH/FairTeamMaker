@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # 로컬 IP 주소 가져오기 (macOS/Linux에서 동작)
-LOCAL_IP=$(ifconfig | grep -E "inet ([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{print $2}' | head -n 1)
+#LOCAL_IP=$(ifconfig | grep -E "inet ([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{print $2}' | head -n 1)
+LOCAL_IP="0.0.0.0"
 
 # 기본 포트 설정
 PORT=${PORT:-3000}
@@ -33,4 +34,4 @@ echo "API 서버 URL: $API_URL"
 echo "모바일에서 접속하려면: http://$LOCAL_IP:$PORT"
 
 # React 앱을 모든 인터페이스에서 접속 가능하게 실행
-HOST=$HOST REACT_APP_API_URL=$API_URL npm start -- --host $HOST --port $PORT 
+HOST=$HOST PORT=$PORT REACT_APP_API_URL=$API_URL npm start

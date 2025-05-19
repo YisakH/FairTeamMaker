@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PlusIcon, TrashIcon, UserGroupIcon, CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import NaverLogin from './components/auth/NaverLogin';
+import { useAuth } from './components/auth/AuthContext';
 
 // API 기본 URL을 환경변수에서 가져오거나 기본값으로 localhost 사용
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 function App() {
+  const { user, isAuthenticated, login, logout } = useAuth();
   const [participants, setParticipants] = useState([]);
   const [attendingParticipants, setAttendingParticipants] = useState([]);
   const [newParticipant, setNewParticipant] = useState('');
@@ -274,7 +277,26 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">조 생성기</h1>
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-3xl font-bold text-gray-900">조 생성기</h1>
+          <div className="flex items-center space-x-4">
+            {isAuthenticated() ? (
+              <div className="flex items-center">
+                <span className="text-sm font-medium text-gray-700 mr-2">
+                  {user?.name}님 환영합니다
+                </span>
+                <button
+                  onClick={logout}
+                  className="inline-flex items-center px-3 py-1 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-red-500"
+                >
+                  로그아웃
+                </button>
+              </div>
+            ) : (
+              <NaverLogin onLoginSuccess={login} />
+            )}
+          </div>
+        </div>
 
         {/* 알림 메시지 */}
         {notification.show && (

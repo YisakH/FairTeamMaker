@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from .models import (
     Participant,
@@ -12,6 +12,7 @@ from .models import (
     TodayDataDeleteResponse
 )
 from .team_generator import TeamGenerator
+from .auth import router as auth_router, get_current_user, TokenData
 from typing import List, Dict, Any
 import json
 import os
@@ -27,6 +28,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# 인증 라우터 추가
+app.include_router(auth_router)
 
 # 파일 경로 설정
 PARTICIPANTS_FILE = "data/participants.json"

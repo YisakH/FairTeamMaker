@@ -265,7 +265,7 @@ class TeamGenerator:
         
         return best
 
-    def update_cooccurrence(self, groups: List[List[str]], accumulate_same_day: bool = False) -> None:
+    def update_cooccurrence(self, groups: List[List[str]], accumulate_same_day: bool = True) -> None:
         """
         Update co-occurrence data with new groups.
         

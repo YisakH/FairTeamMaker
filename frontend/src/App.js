@@ -3,7 +3,7 @@ import axios from 'axios';
 import { PlusIcon, TrashIcon, UserGroupIcon, CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // API 기본 URL을 환경변수에서 가져오거나 기본값으로 localhost 사용
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_BASE_URL = 'https://maketeam.2esak.com/api';
 
 function App() {
   const [participants, setParticipants] = useState([]);
@@ -12,7 +12,7 @@ function App() {
   const [groups, setGroups] = useState([]);
   const [cooccurrenceInfo, setCooccurrenceInfo] = useState({});
   const [loading, setLoading] = useState(false);
-  const [view, setView] = useState('manage'); // 'manage', 'attendance', 'options', 'results', 'history'
+  const [view, setView] = useState('attendance'); // 'manage', 'attendance', 'options', 'results', 'history'
   const [generationMethod, setGenerationMethod] = useState('simulated_annealing');
   const [lambdaValue, setLambdaValue] = useState(0.7);
   const [showOptions, setShowOptions] = useState(false);
@@ -49,6 +49,7 @@ function App() {
       const response = await axios.get(`${API_BASE_URL}/participants`);
       setParticipants(response.data);
     } catch (error) {
+      console.error(`니가 별 짓을 다 했지만 나는 ${API_BASE_URL + '/participants'} 여기로 보냈지롱`);
       console.error('참가자 목록을 불러오는데 실패했습니다:', error);
     }
   };
@@ -57,8 +58,10 @@ function App() {
     try {
       const response = await axios.get(`${API_BASE_URL}/attending`);
       setAttendingParticipants(response.data);
+      console.log(`no bug: ${API_BASE_URL}/attending 여기로 보냈지롱`);
     } catch (error) {
-      console.error('참석자 목록을 불러오는데 실패했습니다:', error);
+      console.error(`니가 별 짓을 다 했지만 나는 ${API_BASE_URL + '/participants'} 여기로 보냈지롱`);
+      console.error('참석자 목록을 불러오는데 실패했습니다ㅋㅋㅋㅋㅋㅋ:', error);
     }
   };
 
@@ -830,12 +833,12 @@ function App() {
               <div className="space-y-4">
                 {teamHistory.slice().reverse().map((historyItem) => (
                   <div key={historyItem.date} className="border border-gray-200 rounded-lg overflow-hidden">
-                    <div className="bg-gray-50 px-4 py-2 flex justify-between items-center">
-                      <div>
+                    <div className="bg-gray-50 px-4 py-2 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                      <div className="mb-2 sm:mb-0">
                         <span className="text-sm font-medium text-gray-900">
                           {formatDateTime(historyItem.date)}
                         </span>
-                        <div className="flex space-x-2 mt-1">
+                        <div className="flex flex-wrap gap-1 mt-1">
                           <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                             {historyItem.method_used === 'simulated_annealing' ? '최적화' : '랜덤'}
                           </span>
@@ -850,16 +853,16 @@ function App() {
                           </span>
                         </div>
                       </div>
-                      <div className="flex space-x-2">
+                      <div className="flex flex-col space-y-1 sm:flex-row sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
                         <button
                           onClick={() => loadHistoryTeam(historyItem)}
-                          className="inline-flex items-center px-2 py-1 border border-indigo-300 text-xs font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50"
+                          className="inline-flex items-center justify-center px-2 py-1 border border-indigo-300 text-xs font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 w-full sm:w-auto"
                         >
-                          보기
+                          자세한 정보 보기
                         </button>
                         <button
                           onClick={() => setDeleteConfirmDate(historyItem.date)}
-                          className="inline-flex items-center px-2 py-1 border border-red-300 text-xs font-medium rounded-md text-red-700 bg-white hover:bg-red-50"
+                          className="inline-flex items-center justify-center px-2 py-1 border border-red-300 text-xs font-medium rounded-md text-red-700 bg-white hover:bg-red-50 w-full sm:w-auto"
                         >
                           삭제
                         </button>

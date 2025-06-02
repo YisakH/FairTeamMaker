@@ -268,7 +268,7 @@ async def generate_teams(request: TeamGenerationRequest) -> TeamGenerationRespon
         )
     
     # 공동 참여 정보 업데이트
-    team_generator.update_cooccurrence(groups, request.accumulate_same_day)
+    team_generator.update_cooccurrence(groups)#, request.accumulate_same_day)
     cooccurrence_info = team_generator.get_cooccurrence_info(request.participants, request.lam)
     
     # 조 생성 기록 저장

@@ -1,36 +1,38 @@
 #!/bin/bash
 
-# 로컬 IP 주소 가져오기 (macOS/Linux에서 동작)
-LOCAL_IP=$(ifconfig | grep -E "inet ([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{print $2}' | head -n 1)
+set -e  # Exit immediately if a command exits with a non-zero status
 
-# 기본 포트 설정
-PORT=${PORT:-3000}
-# API URL 설정 - 로컬 IP 사용
-API_URL=${API_URL:-http://$LOCAL_IP:8000}
-# 호스트 설정 (0.0.0.0은 모든 네트워크 인터페이스에서 접속 가능)
+# Set API URL (default to production URL if not provided)
+API_URL=${API_URL:-https://maketeam.2esak.com/api}
 HOST=${HOST:-0.0.0.0}
+PORT=${PORT:-3000}
 
-# 데이터 디렉토리 생성
+# Log file path
+LOG_FILE="../front.log"
+
+# Ensure data directory exists
 mkdir -p data
 
-# 현재 디렉토리 확인
+# Check if frontend directory exists
 if [ ! -d "frontend" ]; then
-    echo "frontend 디렉토리가 없습니다!"
+    echo "[ERROR] frontend directory not found."
     exit 1
 fi
 
 cd frontend
 
-# 필요한 패키지 설치
+# Install dependencies if node_modules doesn't exist
 if [ ! -d "node_modules" ]; then
-    echo "node_modules가 없습니다. npm install을 실행합니다..."
+    echo "[INFO] node_modules not found. Running npm install..."
     npm install
 fi
 
-# 환경 변수 설정 및 프론트엔드 실행
-echo "프론트엔드를 $HOST:$PORT에서 실행합니다..."
-echo "API 서버 URL: $API_URL"
-echo "모바일에서 접속하려면: http://$LOCAL_IP:$PORT"
+# Print current settings
+echo "[INFO] API URL: $API_URL"
+echo "[INFO] Starting React app on $HOST:$PORT"
+echo "[INFO] Logs will be written to $LOG_FILE"
 
-# React 앱을 모든 인터페이스에서 접속 가능하게 실행
-HOST=$HOST REACT_APP_API_URL=$API_URL npm start -- --host $HOST --port $PORT 
+# Run React app in background with nohup, and keep it alive after terminal closes
+nohup env HOST=$HOST REACT_APP_API_URL=$API_URL PORT=$PORT npm start -- --host $HOST --port $PORT > "$LOG_FILE" 2>&1 &
+
+echo "[SUCCESS] React app started in background. PID: $!"

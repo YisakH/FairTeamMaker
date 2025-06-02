@@ -3,7 +3,7 @@ import axios from 'axios';
 import { PlusIcon, TrashIcon, UserGroupIcon, CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // API 기본 URL을 환경변수에서 가져오거나 기본값으로 localhost 사용
-const API_BASE_URL = 'https://maketeam.2esak.com/api';
+const API_BASE_URL = 'http://localhost:8000';
 
 function App() {
   const [participants, setParticipants] = useState([]);

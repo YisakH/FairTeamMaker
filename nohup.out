@@ -853,3 +853,200 @@ INFO:     192.168.30.205:47464 - "GET /has-today-data HTTP/1.1" 200 OK
 [디버깅] 데이터 저장 완료: data/past_cooccurrence.json
 INFO:     192.168.30.205:47478 - "POST /generate HTTP/1.1" 200 OK
 INFO:     192.168.30.205:53820 - "GET /team-history HTTP/1.1" 200 OK
+서버를 0.0.0.0:8000에서 실행합니다...
+INFO:     Will watch for changes in these directories: ['/root/FairTeamMaker']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [26357] using StatReload
+INFO:     Started server process [26359]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26359]
+INFO:     Stopping reloader process [26357]
+서버를 0.0.0.0:8000에서 실행합니다...
+INFO:     Started server process [26374]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.30.205:35058 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35070 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49324 - "GET /participants HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49336 - "GET /attending HTTP/1.1" 200 OK
+[디버깅] 파일에서 데이터 로드 성공: data/past_cooccurrence.json
+[디버깅] 로드된 데이터 크기: 24
+[디버깅] 날짜 범위: 2025-05-28 ~ 2025-07-27
+[디버깅] 처리 후 데이터 크기: 24
+INFO:     192.168.30.205:49350 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49360 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49368 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49380 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49390 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49402 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49408 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49420 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49422 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49436 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49450 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49464 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49474 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49480 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49488 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49502 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49516 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49530 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49532 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49548 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49552 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49566 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49582 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49590 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49596 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49608 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49616 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49618 - "POST /reset-attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49620 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49632 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49634 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49638 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49650 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49664 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49678 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49690 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49694 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49702 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49706 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49722 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49736 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49744 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49750 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49756 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49762 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49774 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49786 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49788 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49798 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49812 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49816 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49820 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49836 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49842 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49852 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47066 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47076 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47080 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47082 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47094 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47102 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:42826 - "GET /has-today-data HTTP/1.1" 200 OK
+[디버깅] 파일에서 데이터 로드 성공: data/past_cooccurrence.json
+[디버깅] 로드된 데이터 크기: 24
+[디버깅] 날짜 범위: 2025-05-28 ~ 2025-07-27
+[디버깅] 처리 후 데이터 크기: 24
+[디버깅] 오늘 날짜: 2025-07-27
+[디버깅] 전체 참가자 데이터 개수: 24
+[디버깅] accumulate_same_day 설정: True
+[디버깅] 삭제 전 오늘 날짜 기록 수: 0
+[디버깅] 오늘 날짜 데이터 삭제 후 기록 수: 0
+[디버깅] 새 데이터 추가 후 오늘 날짜 기록 수: 68
+[디버깅] 저장 전 데이터 상태: 24 참가자
+[디버깅] 총 데이터 항목 수: 488
+[디버깅] 날짜별 데이터 수: {'2025-06-22': 68, '2025-06-08': 76, '2025-06-01': 76, '2025-07-06': 72, '2025-07-27': 68, '2025-06-29': 60, '2025-07-13': 68}
+[디버깅] 데이터 저장 완료: data/past_cooccurrence.json
+INFO:     192.168.30.205:42834 - "POST /generate HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52132 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52146 - "GET /participants HTTP/1.1" 200 OK
+[디버깅] 파일에서 데이터 로드 성공: data/past_cooccurrence.json
+[디버깅] 로드된 데이터 크기: 24
+[디버깅] 날짜 범위: 2025-05-28 ~ 2025-07-27
+[디버깅] 처리 후 데이터 크기: 24
+INFO:     192.168.30.205:52150 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52162 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52178 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52180 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52196 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52208 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52218 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52224 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52234 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52242 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52256 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52264 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52276 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52286 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52302 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52310 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52316 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52322 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52334 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52340 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52348 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52358 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52370 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52378 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52392 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52398 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52400 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52414 - "POST /reset-attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52422 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35296 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35308 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35310 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35326 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35340 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35354 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35368 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35376 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35380 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35396 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35412 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35414 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35428 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35440 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35456 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35464 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35470 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35472 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35474 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35490 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35500 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35506 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35518 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35522 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35530 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35534 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35550 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35562 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35568 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35578 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35588 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35596 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35612 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35622 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35630 - "POST /attendance HTTP/1.1" 200 OK
+INFO:     192.168.30.205:35632 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:57358 - "GET /has-today-data HTTP/1.1" 200 OK
+[디버깅] 파일에서 데이터 로드 성공: data/past_cooccurrence.json
+[디버깅] 로드된 데이터 크기: 24
+[디버깅] 날짜 범위: 2025-05-28 ~ 2025-07-27
+[디버깅] 처리 후 데이터 크기: 24
+[디버깅] 오늘 날짜: 2025-07-27
+[디버깅] 전체 참가자 데이터 개수: 24
+[디버깅] accumulate_same_day 설정: True
+[디버깅] 삭제 전 오늘 날짜 기록 수: 68
+[디버깅] 오늘 날짜 데이터 삭제 후 기록 수: 68
+[디버깅] 새 데이터 추가 후 오늘 날짜 기록 수: 128
+[디버깅] 저장 전 데이터 상태: 24 참가자
+[디버깅] 총 데이터 항목 수: 548
+[디버깅] 날짜별 데이터 수: {'2025-06-22': 68, '2025-06-08': 76, '2025-06-01': 76, '2025-07-06': 72, '2025-07-27': 128, '2025-06-29': 60, '2025-07-13': 68}
+[디버깅] 데이터 저장 완료: data/past_cooccurrence.json
+INFO:     192.168.30.205:57374 - "POST /generate HTTP/1.1" 200 OK
+INFO:     192.168.30.205:43392 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:34688 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:34704 - "GET /participants HTTP/1.1" 200 OK
+[디버깅] 파일에서 데이터 로드 성공: data/past_cooccurrence.json
+[디버깅] 로드된 데이터 크기: 24
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 처리 후 데이터 크기: 24
+INFO:     192.168.30.205:34710 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK

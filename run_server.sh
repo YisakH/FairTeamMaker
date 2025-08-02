@@ -16,4 +16,4 @@ mkdir -p data
 
 # 서버 실행
 echo "서버를 $HOST:$PORT에서 실행합니다..."
-uvicorn app.main:app --host $HOST --port $PORT --reload 
+uvicorn app.main:app --host $HOST --port $PORT 

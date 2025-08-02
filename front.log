@@ -6,31 +6,4 @@ Attempting to bind to HOST environment variable: 0.0.0.0
 If this was unintentional, check that you haven't mistakenly set it in your shell.
 Learn more here: https://cra.link/advanced-config
 
-(node:7601) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
-(node:7601) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
-Starting the development server...
-
-Compiled with warnings.
-
-[eslint] 
-src/App.js
-  Line 20:10:   'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 20:29:   'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 22:10:   'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 40:6:    React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 45:6:    React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 728:41:  'lastMet' is assigned a value but never used                                                                              no-unused-vars
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/App.js
-  Line 20:10:   'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 20:29:   'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 22:10:   'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 40:6:    React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 45:6:    React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 728:41:  'lastMet' is assigned a value but never used                                                                              no-unused-vars
-
-webpack compiled with 1 warning
+Something is already running on port 3000.

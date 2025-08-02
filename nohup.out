@@ -1050,3 +1050,108 @@ INFO:     192.168.30.205:34704 - "GET /participants HTTP/1.1" 200 OK
 [디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
 [디버깅] 처리 후 데이터 크기: 24
 INFO:     192.168.30.205:34710 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+./run_server.sh: line 19: 26374 Killed                  uvicorn app.main:app --host $HOST --port $PORT
+서버를 0.0.0.0:8000에서 실행합니다...
+INFO:     Started server process [30549]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.30.205:47306 - "GET /participants HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 8
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 7
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
+INFO:     192.168.30.205:47316 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47332 - "GET /attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47342 - "GET /participants HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 8
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 7
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
+INFO:     192.168.30.205:47354 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47366 - "GET /attending HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 8
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 7
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
+INFO:     192.168.30.205:47382 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 8
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 7
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
+INFO:     192.168.30.205:47398 - "GET /cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:47408 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49658 - "GET /has-today-data HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 8
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 7
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 20
+INFO:     192.168.30.205:49662 - "POST /generate HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49674 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:49680 - "GET /team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-03
+[디버깅] cooccurrence 데이터 삭제 중 오류: name 'COOCCURRENCE_FILE' is not defined
+INFO:     192.168.30.205:59260 - "DELETE /team-history/2025-08-03T02%3A02%3A45.118947 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:59268 - "GET /team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-07-27
+[디버깅] cooccurrence 데이터 삭제 중 오류: name 'COOCCURRENCE_FILE' is not defined
+INFO:     192.168.30.205:52550 - "DELETE /team-history/2025-07-27T10%3A38%3A29.982059 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52552 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:36370 - "GET /has-today-data HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 7
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 6
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 20
+INFO:     192.168.30.205:36376 - "POST /generate HTTP/1.1" 200 OK
+INFO:     192.168.30.205:36388 - "GET /team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-03
+[디버깅] cooccurrence 데이터 삭제 중 오류: name 'COOCCURRENCE_FILE' is not defined
+INFO:     192.168.30.205:53012 - "DELETE /team-history/2025-08-03T02%3A04%3A32.599307 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:53018 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:53030 - "GET /has-today-data HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 7
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 6
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 20
+INFO:     192.168.30.205:53036 - "POST /generate HTTP/1.1" 200 OK
+INFO:     192.168.30.205:41590 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:41594 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:41598 - "GET /team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-03
+[디버깅] cooccurrence 데이터 삭제 중 오류: name 'COOCCURRENCE_FILE' is not defined
+INFO:     192.168.30.205:44462 - "DELETE /team-history/2025-08-03T02%3A04%3A50.210955 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:44468 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:42778 - "GET /has-today-data HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 7
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 6
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 20
+INFO:     192.168.30.205:42790 - "POST /generate HTTP/1.1" 200 OK
+INFO:     192.168.30.205:42796 - "GET /team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-03
+[디버깅] cooccurrence 데이터 삭제 중 오류: name 'COOCCURRENCE_FILE' is not defined
+INFO:     192.168.30.205:42800 - "DELETE /team-history/2025-08-03T02%3A05%3A14.801045 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:42806 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:39026 - "GET /has-today-data HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 7
+[디버깅] 날짜 범위: 2025-06-04 ~ 2025-08-03
+[디버깅] 유효한 기록 수: 6
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 20
+INFO:     192.168.30.205:39036 - "POST /generate HTTP/1.1" 200 OK
+INFO:     192.168.30.205:39050 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:56864 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:55202 - "GET /team-history HTTP/1.1" 200 OK
+INFO:     192.168.30.205:34186 - "GET /team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-03
+[디버깅] cooccurrence 데이터 삭제 중 오류: name 'COOCCURRENCE_FILE' is not defined
+INFO:     192.168.30.205:59012 - "DELETE /team-history/2025-08-03T02%3A05%3A25.826920 HTTP/1.1" 200 OK
+INFO:     192.168.30.205:59020 - "GET /team-history HTTP/1.1" 200 OK

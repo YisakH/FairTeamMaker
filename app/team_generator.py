@@ -1,96 +1,64 @@
 import random
 import math
 import json
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 from typing import List, Dict, Tuple
 
 class TeamGenerator:
-    def __init__(self, data_file: str = "data/past_cooccurrence.json"):
-        self.data_file = data_file
+    def __init__(self, team_history_file: str = "data/team_history.json"):
+        self.team_history_file = team_history_file
         self.past_dates: Dict[str, Dict[str, List[str]]] = {}
 
-    def load_past_cooccurrence(self, participants: List[str], window_days: int = 60) -> None:
-        """Load and prune past co-occurrence data."""
+    def load_past_cooccurrence_from_history(self, participants: List[str], window_days: int = 60) -> None:
+        """Load past co-occurrence data from team history and prune old data."""
         try:
-            with open(self.data_file, "r", encoding='utf-8') as f:
-                data = json.load(f)
-                print(f"[디버깅] 파일에서 데이터 로드 성공: {self.data_file}")
-                print(f"[디버깅] 로드된 데이터 크기: {len(data)}")
+            with open(self.team_history_file, "r", encoding='utf-8') as f:
+                history = json.load(f)
+                print(f"[디버깅] 팀 히스토리에서 데이터 로드 성공: {self.team_history_file}")
+                print(f"[디버깅] 히스토리 기록 수: {len(history)}")
         except FileNotFoundError:
-            print(f"[디버깅] 파일이 존재하지 않음: {self.data_file}")
-            data = {}
+            print(f"[디버깅] 파일이 존재하지 않음: {self.team_history_file}")
+            history = []
         except json.JSONDecodeError:
-            print(f"[디버깅] JSON 파싱 오류: {self.data_file}")
-            data = {}
+            print(f"[디버깅] JSON 파싱 오류: {self.team_history_file}")
+            history = []
 
         today = date.today()
         cutoff = today - timedelta(days=window_days)
         print(f"[디버깅] 날짜 범위: {cutoff} ~ {today}")
 
-        # 참가자 데이터 상태 확인
-        new_participants = [p for p in participants if p not in data]
-        if new_participants:
-            print(f"[디버깅] 새로 추가된 참가자들: {new_participants}")
-            
-        # 원본 데이터 복사 (중요: 전체 데이터를 유지)
-        self.past_dates = data.copy()
-
-        # 새로운 참가자에 대한 데이터 구조 생성 (기존 데이터는 유지)
+        # 참가자별 공동 참여 데이터 초기화
+        self.past_dates = {}
         for p in participants:
-            if p not in self.past_dates:
-                self.past_dates[p] = {}
-            
+            self.past_dates[p] = {}
             for q in participants:
-                if p == q:
-                    continue
-                if q not in self.past_dates[p]:
+                if p != q:
                     self.past_dates[p][q] = []
-                    
-        # 오래된 날짜 데이터 정리 (prune)
-        for p in list(self.past_dates.keys()):
-            for q in list(self.past_dates.get(p, {}).keys()):
-                raw = self.past_dates[p].get(q, [])
+
+        # 팀 히스토리에서 공동 참여 데이터 생성
+        valid_records = 0
+        for record in history:
+            try:
+                # 날짜 파싱 (ISO 형식에서 날짜 부분만 추출)
+                record_date_str = record['date'][:10]  # "2025-06-01T10:36:27.121908" -> "2025-06-01"
+                record_date = date.fromisoformat(record_date_str)
                 
-                # Backward compatibility: if int, create that many dates at cutoff
-                if isinstance(raw, int):
-                    dates = [cutoff.isoformat()] * raw
-                elif isinstance(raw, list):
-                    dates = raw
-                else:
-                    dates = []
+                # 날짜 범위 확인
+                if record_date >= cutoff:
+                    valid_records += 1
+                    # 각 그룹 내의 모든 참가자 쌍에 대해 공동 참여 기록
+                    for group in record['groups']:
+                        for i in range(len(group)):
+                            for j in range(len(group)):
+                                if i != j and group[i] in participants and group[j] in participants:
+                                    if group[i] in self.past_dates and group[j] in self.past_dates[group[i]]:
+                                        self.past_dates[group[i]][group[j]].append(record_date_str)
+            except (KeyError, ValueError, TypeError) as e:
+                print(f"[디버깅] 기록 처리 중 오류: {e}")
+                continue
 
-                # Prune old dates
-                valid = []
-                for ds in dates:
-                    try:
-                        d = date.fromisoformat(ds)
-                        if d >= cutoff:
-                            valid.append(ds)
-                    except ValueError:
-                        continue
-                self.past_dates[p][q] = valid
-
-        print(f"[디버깅] 처리 후 데이터 크기: {len(self.past_dates)}")
-
-    def save_past_cooccurrence(self) -> None:
-        """Save the current state to JSON file."""
-        print(f"[디버깅] 저장 전 데이터 상태: {len(self.past_dates)} 참가자")
-        
-        # 날짜별 카운트
-        date_counts = {}
-        total_entries = 0
-        for p in self.past_dates:
-            for q in self.past_dates[p]:
-                for d in self.past_dates[p][q]:
-                    date_counts[d] = date_counts.get(d, 0) + 1
-                    total_entries += 1
-        
-        print(f"[디버깅] 총 데이터 항목 수: {total_entries}")
-        print(f"[디버깅] 날짜별 데이터 수: {date_counts}")
-        
-        with open(self.data_file, "w", encoding='utf-8') as f:
-            json.dump(self.past_dates, f, indent=2, ensure_ascii=False)
-            print(f"[디버깅] 데이터 저장 완료: {self.data_file}")
+        print(f"[디버깅] 유효한 기록 수: {valid_records}")
+        print(f"[디버깅] 생성된 공동 참여 데이터 참가자 수: {len(self.past_dates)}")
 
     def get_cooccurrence_info(self, participants: List[str], lam: float = 0.7) -> Dict[str, Dict[str, Dict]]:
         """Get detailed co-occurrence information for all pairs."""
@@ -265,123 +233,10 @@ class TeamGenerator:
         
         return best
 
-    def update_cooccurrence(self, groups: List[List[str]], accumulate_same_day: bool = True) -> None:
-        """
-        Update co-occurrence data with new groups.
-        
-        Args:
-            groups: List of participant groups
-            accumulate_same_day: If False (default), removes existing entries for today before adding new ones
-                                 If True, accumulates multiple entries for the same day
-        """
-        today_str = date.today().isoformat()
-        
-        # 디버깅을 위해 처리 전 상태 출력
-        print(f"[디버깅] 오늘 날짜: {today_str}")
-        print(f"[디버깅] 전체 참가자 데이터 개수: {len(self.past_dates)}")
-        print(f"[디버깅] accumulate_same_day 설정: {accumulate_same_day}")
-        
-        # 현재 참가자 목록 수집
-        participants_in_groups = set()
-        for grp in groups:
-            for p in grp:
-                participants_in_groups.add(p)
-        
-        # 해당 날짜의 데이터 카운트
-        today_count_before = 0
-        for p in self.past_dates:
-            for q in self.past_dates.get(p, {}):
-                if q in self.past_dates[p]:
-                    today_count_before += self.past_dates[p][q].count(today_str)
-        print(f"[디버깅] 삭제 전 오늘 날짜 기록 수: {today_count_before}")
-        
-        # 같은 날짜 누적을 방지하기 위해 오늘 날짜의 기존 데이터 제거
-        if not accumulate_same_day:
-            # 최신 데이터를 찾기 위해 각 참가자 쌍별로 최신 등록 시간 찾기
-            latest_additions = {}
-            
-            # 1. 먼저 각 참가자 쌍별로 오늘 날짜 데이터 수집
-            for p in participants_in_groups:
-                if p not in self.past_dates:
-                    continue
-                
-                for q in participants_in_groups:
-                    if p == q or q not in self.past_dates[p]:
-                        continue
-                    
-                    # 오늘 날짜 데이터 찾기
-                    today_dates = [d for d in self.past_dates[p][q] if d == today_str]
-                    
-                    # 오늘 데이터가 있는 경우
-                    if today_dates:
-                        pair_key = tuple(sorted([p, q]))
-                        if pair_key not in latest_additions:
-                            latest_additions[pair_key] = 0
-                        # 오늘 등록된 횟수 카운트
-                        latest_additions[pair_key] += len(today_dates)
-            
-            # 2. 마지막으로 등록된 데이터만 남기고 삭제
-            for p in participants_in_groups:
-                if p not in self.past_dates:
-                    self.past_dates[p] = {}
-                    continue
-                
-                for q in participants_in_groups:
-                    if p == q:
-                        continue
-                    
-                    if q not in self.past_dates[p]:
-                        self.past_dates[p][q] = []
-                        continue
-                    
-                    pair_key = tuple(sorted([p, q]))
-                    if pair_key in latest_additions and latest_additions[pair_key] > 0:
-                        # 오늘 데이터 개수 확인
-                        today_count = self.past_dates[p][q].count(today_str)
-                        
-                        # 마지막 데이터 하나만 남기고 삭제 (최신 데이터 유지)
-                        if today_count > 1:
-                            # 오늘 날짜 데이터 전부 제거
-                            self.past_dates[p][q] = [d for d in self.past_dates[p][q] if d != today_str]
-                            
-                            # 마지막 데이터 하나만 추가
-                            self.past_dates[p][q].append(today_str)
-                            
-                            print(f"[디버깅] {p}와 {q} 쌍에서 최신 데이터 하나만 유지, {today_count-1}개 삭제됨")
-        
-        # 삭제 후 카운트
-        today_count_after = 0
-        for p in self.past_dates:
-            for q in self.past_dates.get(p, {}):
-                if q in self.past_dates[p]:
-                    today_count_after += self.past_dates[p][q].count(today_str)
-        print(f"[디버깅] 오늘 날짜 데이터 삭제 후 기록 수: {today_count_after}")
-        
-        # 새로운 그룹 데이터 추가
-        for grp in groups:
-            for i in grp:
-                for j in grp:
-                    if i != j:
-                        if i not in self.past_dates:
-                            self.past_dates[i] = {}
-                        if j not in self.past_dates[i]:
-                            self.past_dates[i][j] = []
-                        self.past_dates[i][j].append(today_str)
-        
-        # 추가 후 카운트
-        today_count_final = 0
-        for p in self.past_dates:
-            for q in self.past_dates.get(p, {}):
-                if q in self.past_dates[p]:
-                    today_count_final += self.past_dates[p][q].count(today_str)
-        print(f"[디버깅] 새 데이터 추가 후 오늘 날짜 기록 수: {today_count_final}")
-        
-        self.save_past_cooccurrence()
-
     @staticmethod
     def _partition_group_sizes(n: int) -> List[int]:
         """Divide n participants into groups of 4 or 5."""
         r = n % 4
         num_fives = r
         num_fours = (n - 5 * r) // 4
-        return [5] * num_fives + [4] * num_fours 
+        return [5] * num_fives + [4] * num_fours

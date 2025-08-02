@@ -31,11 +31,10 @@ app.add_middleware(
 # 파일 경로 설정
 PARTICIPANTS_FILE = "data/participants.json"
 ATTENDING_FILE = "data/attending_participants.json"
-COOCCURRENCE_FILE = "data/past_cooccurrence.json"
 TEAM_HISTORY_FILE = "data/team_history.json"
 
 # 전역 TeamGenerator 인스턴스
-team_generator = TeamGenerator(data_file=COOCCURRENCE_FILE)
+team_generator = TeamGenerator(team_history_file=TEAM_HISTORY_FILE)
 
 # 파일이 존재하지 않으면 생성
 def ensure_file_exists(file_path: str, default_content):
@@ -48,7 +47,6 @@ def ensure_file_exists(file_path: str, default_content):
 async def startup_event():
     ensure_file_exists(PARTICIPANTS_FILE, [])
     ensure_file_exists(ATTENDING_FILE, [])
-    ensure_file_exists(COOCCURRENCE_FILE, {})
     ensure_file_exists(TEAM_HISTORY_FILE, [])
     
     # 기존 파일 데이터 정렬
@@ -107,22 +105,8 @@ async def add_participant(participant: Participant):
     with open(PARTICIPANTS_FILE, "w", encoding='utf-8') as f:
         json.dump(participants, f, indent=2, ensure_ascii=False)
 
-    # 공동 참여 데이터 업데이트
-    try:
-        with open(COOCCURRENCE_FILE, "r", encoding='utf-8') as f:
-            data = json.load(f)
-    except FileNotFoundError:
-        data = {}
-
-    # 새 참가자에 대한 빈 데이터 구조 생성
-    data[participant.name] = {}
-    for existing in data.keys():
-        if existing != participant.name:
-            data[existing][participant.name] = []
-            data[participant.name][existing] = []
-
-    with open(COOCCURRENCE_FILE, "w", encoding='utf-8') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    # 참가자가 추가되었으므로 특별한 추가 처리는 필요 없음
+    # team_history.json에서 자동으로 공동 참여 데이터를 생성함
 
     return {"message": f"참가자 {participant.name}이(가) 추가되었습니다."}
 
@@ -157,22 +141,8 @@ async def remove_participant(name: str):
     except FileNotFoundError:
         pass
 
-    # 공동 참여 데이터 업데이트
-    try:
-        with open(COOCCURRENCE_FILE, "r", encoding='utf-8') as f:
-            data = json.load(f)
-    except FileNotFoundError:
-        data = {}
-
-    # 참가자 데이터 제거
-    if name in data:
-        del data[name]
-    for other in data:
-        if name in data[other]:
-            del data[other][name]
-
-    with open(COOCCURRENCE_FILE, "w", encoding='utf-8') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    # 참가자가 제거되었으므로 특별한 추가 처리는 필요 없음
+    # team_history.json에서 자동으로 공동 참여 데이터를 생성함
 
     return {"message": f"참가자 {name}이(가) 제거되었습니다."}
 
@@ -231,14 +201,14 @@ async def reset_attendance():
 async def get_cooccurrence_info(lam: float = 0.7) -> Dict[str, Dict[str, CooccurrenceInfo]]:
     """모든 참가자 쌍의 공동 참여 정보를 반환합니다."""
     participants = await get_participants()
-    team_generator.load_past_cooccurrence(participants)
+    team_generator.load_past_cooccurrence_from_history(participants)
     return team_generator.get_cooccurrence_info(participants, lam)
 
 @app.post("/generate")
 async def generate_teams(request: TeamGenerationRequest) -> TeamGenerationResponse:
     """새로운 팀을 생성합니다."""
     # 과거 데이터 로드
-    team_generator.load_past_cooccurrence(request.participants, request.window_days)
+    team_generator.load_past_cooccurrence_from_history(request.participants, request.window_days)
     
     # 팀 생성 방법 선택
     method_used = request.method
@@ -267,8 +237,7 @@ async def generate_teams(request: TeamGenerationRequest) -> TeamGenerationRespon
             max_iter=int(sa_params.get("max_iter", 5000))
         )
     
-    # 공동 참여 정보 업데이트
-    team_generator.update_cooccurrence(groups)#, request.accumulate_same_day)
+    # 공동 참여 정보는 team_history.json에 저장되므로 별도 업데이트 불필요
     cooccurrence_info = team_generator.get_cooccurrence_info(request.participants, request.lam)
     
     # 조 생성 기록 저장

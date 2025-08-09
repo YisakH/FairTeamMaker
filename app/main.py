@@ -32,6 +32,7 @@ app.add_middleware(
 PARTICIPANTS_FILE = "data/participants.json"
 ATTENDING_FILE = "data/attending_participants.json"
 TEAM_HISTORY_FILE = "data/team_history.json"
+COOCCURRENCE_FILE = "data/cooccurrence.json"
 
 # 전역 TeamGenerator 인스턴스
 team_generator = TeamGenerator(team_history_file=TEAM_HISTORY_FILE)
@@ -69,11 +70,11 @@ async def startup_event():
     except Exception as e:
         print(f"파일 정렬 중 오류 발생: {e}")
 
-@app.get("/")
+@app.get("/api")
 async def root():
     return {"message": "Team Generator API"}
 
-@app.get("/participants")
+@app.get("/api/participants")
 async def get_participants() -> List[str]:
     """현재 등록된 모든 참가자 목록을 반환합니다."""
     try:
@@ -84,7 +85,7 @@ async def get_participants() -> List[str]:
         ensure_file_exists(PARTICIPANTS_FILE, [])
         return []
 
-@app.post("/participants")
+@app.post("/api/participants")
 async def add_participant(participant: Participant):
     """새로운 참가자를 추가합니다."""
     # 참가자 목록 불러오기
@@ -110,7 +111,7 @@ async def add_participant(participant: Participant):
 
     return {"message": f"참가자 {participant.name}이(가) 추가되었습니다."}
 
-@app.delete("/participants/{name}")
+@app.delete("/api/participants/{name}")
 async def remove_participant(name: str):
     """참가자를 제거합니다."""
     # 참가자 목록 불러오기
@@ -146,7 +147,7 @@ async def remove_participant(name: str):
 
     return {"message": f"참가자 {name}이(가) 제거되었습니다."}
 
-@app.get("/attending")
+@app.get("/api/attending")
 async def get_attending() -> List[str]:
     """현재 참석 중인 참가자 목록을 반환합니다."""
     try:
@@ -157,7 +158,7 @@ async def get_attending() -> List[str]:
         ensure_file_exists(ATTENDING_FILE, [])
         return []
 
-@app.post("/attendance")
+@app.post("/api/attendance")
 async def update_attendance(update: AttendanceUpdate):
     """참가자의 참석 여부를 업데이트합니다."""
     # 참가자 목록 확인
@@ -190,25 +191,25 @@ async def update_attendance(update: AttendanceUpdate):
 
     return {"message": f"참가자 {update.name}의 참석 여부가 업데이트되었습니다."}
 
-@app.post("/reset-attendance")
+@app.post("/api/reset-attendance")
 async def reset_attendance():
     """모든 참가자의 참석 여부를 초기화합니다."""
     with open(ATTENDING_FILE, "w", encoding='utf-8') as f:
         json.dump([], f, indent=2, ensure_ascii=False)
     return {"message": "모든 참가자의 참석 여부가 초기화되었습니다."}
 
-@app.get("/cooccurrence")
+@app.get("/api/cooccurrence")
 async def get_cooccurrence_info(lam: float = 0.7) -> Dict[str, Dict[str, CooccurrenceInfo]]:
     """모든 참가자 쌍의 공동 참여 정보를 반환합니다."""
     participants = await get_participants()
     team_generator.load_past_cooccurrence_from_history(participants)
     return team_generator.get_cooccurrence_info(participants, lam)
 
-@app.post("/generate")
+@app.post("/api/generate")
 async def generate_teams(request: TeamGenerationRequest) -> TeamGenerationResponse:
     """새로운 팀을 생성합니다."""
-    # 과거 데이터 로드
-    team_generator.load_past_cooccurrence_from_history(request.participants, request.window_days)
+    # 과거 데이터 로드 (모든 기록 사용, 시간 감쇠 적용)
+    team_generator.load_past_cooccurrence_from_history(request.participants)
     
     # 팀 생성 방법 선택
     method_used = request.method
@@ -222,20 +223,8 @@ async def generate_teams(request: TeamGenerationRequest) -> TeamGenerationRespon
     if request.sa_params:
         sa_params = request.sa_params
     
-    # 방법에 따른 팀 생성
-    if method_used == "weighted_random" or len(request.participants) < 8:
-        groups = team_generator._generate_groups_weighted_random(request.participants, request.lam)
-    else:  # simulated_annealing
-        cooccurrence_counts = team_generator._get_cooccurrence_counts(request.participants)
-        groups = team_generator._simulated_annealing(
-            request.participants, 
-            cooccurrence_counts,
-            lam=request.lam,
-            initial_temp=sa_params.get("initial_temp", 100.0),
-            cooling_rate=sa_params.get("cooling_rate", 0.995),
-            temp_min=sa_params.get("temp_min", 0.1),
-            max_iter=int(sa_params.get("max_iter", 5000))
-        )
+    # 새로운 시간 감쇠 시스템으로 팀 생성
+    groups = team_generator.generate_groups(request.participants, request.lam)
     
     # 공동 참여 정보는 team_history.json에 저장되므로 별도 업데이트 불필요
     cooccurrence_info = team_generator.get_cooccurrence_info(request.participants, request.lam)
@@ -276,7 +265,7 @@ async def save_team_history(groups: List[List[str]], method_used: str, lambda_va
     with open(TEAM_HISTORY_FILE, "w", encoding='utf-8') as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
 
-@app.get("/team-history")
+@app.get("/api/team-history")
 async def get_team_history() -> TeamHistoryResponse:
     """조 생성 기록을 조회합니다."""
     try:
@@ -287,7 +276,7 @@ async def get_team_history() -> TeamHistoryResponse:
         ensure_file_exists(TEAM_HISTORY_FILE, [])
         return {"history": []}
 
-@app.delete("/team-history/{date}")
+@app.delete("/api/team-history/{date}")
 async def delete_team_history(date: str):
     """특정 날짜의 조 생성 기록을 삭제합니다."""
     try:
@@ -341,7 +330,7 @@ async def delete_team_history(date: str):
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail="조 생성 기록 파일을 파싱할 수 없습니다.")
 
-@app.delete("/team-history")
+@app.delete("/api/team-history")
 async def delete_all_team_history():
     """모든 조 생성 기록을 삭제합니다."""
     try:
@@ -374,7 +363,7 @@ async def delete_all_team_history():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"조 생성 기록 삭제 중 오류가 발생했습니다: {str(e)}")
 
-@app.delete("/today-data")
+@app.delete("/api/today-data")
 async def delete_today_data() -> TodayDataDeleteResponse:
     """오늘 날짜의 가장 최근에 생성된 조 데이터를 삭제합니다."""
     today_str = date.today().isoformat()
@@ -480,7 +469,7 @@ async def delete_today_data() -> TodayDataDeleteResponse:
         }
     )
 
-@app.get("/has-today-data")
+@app.get("/api/has-today-data")
 async def check_today_data():
     """오늘 날짜에 생성된 팀 데이터가 있는지 확인합니다."""
     try:

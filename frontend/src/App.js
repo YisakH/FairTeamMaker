@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PlusIcon, TrashIcon, UserGroupIcon, CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
-// API 기본 URL을 환경변수에서 가져오거나 기본값으로 localhost 사용
-const API_BASE_URL = 'https://maketeam.2esak.com/api';
+// API 기본 URL을 환경변수에서 가져오고, 기본값은 백엔드 기본 포트로 설정
+// (주의) 여기서는 '/api'와 같은 경로 접두사를 붙이지 않습니다.
+const API_BASE_URL = '/api';
 
 function App() {
   const [participants, setParticipants] = useState([]);
@@ -34,6 +35,7 @@ function App() {
   });
 
   useEffect(() => {
+    console.log('API_BASE_URL on component mount:', API_BASE_URL);
     fetchParticipants();
     fetchAttendingParticipants();
     fetchCooccurrenceInfo();
@@ -46,7 +48,9 @@ function App() {
 
   const fetchParticipants = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/participants`);
+      const requestUrl = `${API_BASE_URL}/participants`;
+      console.log(`[API 요청] 참가자 목록: ${requestUrl}`);
+      const response = await axios.get(requestUrl);
       setParticipants(response.data);
     } catch (error) {
       console.error(`니가 별 짓을 다 했지만 나는 ${API_BASE_URL + '/participants'} 여기로 보냈지롱`);
@@ -192,7 +196,9 @@ function App() {
   const fetchTeamHistory = async () => {
     setLoadingHistory(true);
     try {
-      const response = await axios.get(`${API_BASE_URL}/team-history`);
+      const requestUrl = `${API_BASE_URL}/team-history`;
+      console.log(`[API 요청] 팀 생성 기록: ${requestUrl}`);
+      const response = await axios.get(requestUrl);
       setTeamHistory(response.data.history);
     } catch (error) {
       console.error('팀 생성 기록을 불러오는데 실패했습니다:', error);

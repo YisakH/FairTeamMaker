@@ -1,168 +1,86 @@
-INFO:     Started server process [68284]
+INFO:     Started server process [73728]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     127.0.0.1:0 - "GET /api/participants HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 8
+[디버깅] 히스토리 기록 수: 9
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 8
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
+[디버깅] 처리된 기록 수: 9
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 23
 INFO:     127.0.0.1:0 - "GET /api/cooccurrence?lam=0.7 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/attending HTTP/1.1" 200 OK
-INFO:     127.0.0.1:0 - "GET /api/has-today-data HTTP/1.1" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 8
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 8
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 21
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 3.5396
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -5.1017
-INFO:     127.0.0.1:0 - "POST /api/generate HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-08-10
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-10T02%3A30%3A13.933725 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/has-today-data HTTP/1.1" 200 OK
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 8
+[디버깅] 히스토리 기록 수: 9
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 8
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 21
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 2.9716
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -5.1828
+[디버깅] 처리된 기록 수: 9
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 19
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 7.8806
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: 2.4825
 INFO:     127.0.0.1:0 - "POST /api/generate HTTP/1.1" 200 OK
-INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-08-10
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-10T02%3A30%3A22.789086 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/has-today-data HTTP/1.1" 200 OK
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 8
+[디버깅] 히스토리 기록 수: 10
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 8
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 21
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 4.7934
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -4.2584
+[디버깅] 처리된 기록 수: 10
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 19
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 10.7476
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: 7.3907
 INFO:     127.0.0.1:0 - "POST /api/generate HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-08-10
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-10T02%3A30%3A42.029994 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/has-today-data HTTP/1.1" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 11
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 11
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 19
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 11.7919
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: 10.4896
+INFO:     127.0.0.1:0 - "POST /api/generate HTTP/1.1" 200 OK
 INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
-INFO:     192.168.30.205:33826 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33832 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/has-today-data HTTP/1.1" 200 OK
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 8
+[디버깅] 히스토리 기록 수: 12
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 8
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:33836 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:54486 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:54496 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:38162 - "GET /api/has-today-data HTTP/1.0" 200 OK
+[디버깅] 처리된 기록 수: 12
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 19
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 13.5165
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: 11.2395
+INFO:     127.0.0.1:0 - "POST /api/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/has-today-data HTTP/1.1" 200 OK
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 8
+[디버깅] 히스토리 기록 수: 13
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 8
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 20
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 3.0537
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -3.0844
-INFO:     192.168.30.205:38176 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:59702 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:38166 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33024 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33026 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:33042 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33054 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:33070 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33084 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:40368 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47316 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:47330 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47342 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:55076 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55082 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55088 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:55094 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55096 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55110 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:55112 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-INFO:     192.168.30.205:55124 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44634 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44642 - "DELETE /api/participants/%EC%98%A4%EC%84%B8%EC%A4%80 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44658 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44668 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 23
-INFO:     192.168.30.205:44670 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44676 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58530 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 23
-INFO:     192.168.30.205:58540 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58554 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58564 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58570 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 23
-INFO:     192.168.30.205:58576 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 23
-INFO:     192.168.30.205:58584 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 9
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 9
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 23
-INFO:     192.168.30.205:58590 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58598 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 19
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 13.5198
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: 12.3677
+INFO:     127.0.0.1:0 - "POST /api/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-13
+[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
+INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-13T02%3A33%3A57.010840 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-13
+[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
+INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-13T02%3A33%3A42.166658 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-13
+[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
+INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-13T02%3A33%3A33.982139 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-13
+[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
+INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-13T02%3A33%3A26.220112 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK
+[디버깅] 삭제 대상 날짜: 2025-08-13
+[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
+INFO:     127.0.0.1:0 - "DELETE /api/team-history/2025-08-13T02%3A33%3A11.875329 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/team-history HTTP/1.1" 200 OK

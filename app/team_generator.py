@@ -11,11 +11,12 @@ class TeamGenerator:
         self.base_date: date = None  # 기준 날짜 (Week 1)
         
         # 시간 감쇠 파라미터
-        self.decay_rate = 0.8  # 시간 감쇠율 (0~1, 낮을수록 빠르게 감쇠)
-        self.frequency_weight = 0.6  # 빈도 가중치 (A)
-        self.recency_weight = 0.4    # 최근성 가중치 (B)
-        self.first_meeting_bonus = -0.5  # 첫 만남 보너스 (음수 = 선호)
-        self.base_penalty = 1.0      # 기본 페널티
+        self.decay_rate = 0.85  # 시간 감쇠율 (0~1, 낮을수록 빠르게 감쇠)
+        self.frequency_weight = 0.35  # 빈도 가중치 (A)
+        self.recency_weight = 0.65    # 최근성 가중치 (B)
+        self.recency_scale = 0.9     # 최근성 합산의 스케일 k (1 - exp(-k * sum))
+        self.first_meeting_bonus = -0.6  # 첫 만남 보너스 (음수 = 선호)
+        self.base_penalty = 3.0      # 기본 페널티
 
     def load_past_cooccurrence_from_history(self, participants: List[str]) -> None:
         """Load past co-occurrence data from team history with time decay consideration."""
@@ -98,20 +99,22 @@ class TeamGenerator:
         
         current_week = self._get_current_week()
         
-        # 빈도 점수: 총 만난 횟수 기반
+        # 빈도 점수: 총 만난 횟수가 많을수록 페널티가 커지도록 단조 증가형으로 조정
+        #  - 0회: 0, 1회: ~0.503, 5회: ~0.969 (k=0.7)
         total_meetings = len(dates)
-        frequency_score = math.exp(-0.7 * total_meetings)  # 기존 방식 유지
+        frequency_score = 1 - math.exp(-0.7 * total_meetings)
         
-        # 최근성 점수: 마지막 만남으로부터의 시간 감쇠
-        last_meeting_date = max(dates)
-        last_meeting_week = self._get_week_from_date(last_meeting_date)
-        weeks_ago = current_week - last_meeting_week
-        
-        if weeks_ago <= 0:
-            # 이번 주 또는 미래 (이론적으로 불가능하지만 안전장치)
-            recency_score = self.base_penalty
-        else:
-            recency_score = self.base_penalty * (self.decay_rate ** weeks_ago)
+        # 최근성 점수: 모든 만남을 시간감쇠로 합산 후 단조 증가형으로 변환
+        recency_sum = 0.0
+        for d in dates:
+            d_week = self._get_week_from_date(d)
+            weeks_ago_d = current_week - d_week
+            if weeks_ago_d < 0:
+                weeks_ago_d = 0
+            recency_sum += (self.decay_rate ** weeks_ago_d)
+
+        # 합산된 최근성에 스케일을 적용하여 [0, 1) 범위의 점수로 변환
+        recency_score = 1 - math.exp(-self.recency_scale * recency_sum)
         
         # 최종 가중치: 빈도와 최근성의 가중합
         final_weight = (self.frequency_weight * frequency_score) + (self.recency_weight * recency_score)

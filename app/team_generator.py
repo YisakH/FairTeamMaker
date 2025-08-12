@@ -11,7 +11,7 @@ class TeamGenerator:
         self.base_date: date = None  # 기준 날짜 (Week 1)
         
         # 시간 감쇠 파라미터
-        self.decay_rate = 0.6  # 시간 감쇠율 (0~1, 낮을수록 빠르게 감쇠)
+        self.decay_rate = 0.8  # 시간 감쇠율 (0~1, 낮을수록 빠르게 감쇠)
         self.frequency_weight = 0.6  # 빈도 가중치 (A)
         self.recency_weight = 0.4    # 최근성 가중치 (B)
         self.first_meeting_bonus = -0.5  # 첫 만남 보너스 (음수 = 선호)
@@ -274,7 +274,7 @@ class TeamGenerator:
         initial_temp: float = 100.0,
         cooling_rate: float = 0.995,
         temp_min: float = 0.1,
-        max_iter: int = 1000
+        max_iter: int = 1500
     ) -> List[List[str]]:
         """
         Optimize the partition using simulated annealing algorithm with time decay weights.

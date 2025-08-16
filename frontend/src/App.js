@@ -13,7 +13,7 @@ function App() {
   const [groups, setGroups] = useState([]);
   const [cooccurrenceInfo, setCooccurrenceInfo] = useState({});
   const [loading, setLoading] = useState(false);
-  const [view, setView] = useState('attendance'); // 'manage', 'attendance', 'options', 'results', 'history'
+  const [view, setView] = useState('attendance'); // 'manage', 'attendance', 'options', 'results', 'history', 'scores'
   const [generationMethod, setGenerationMethod] = useState('simulated_annealing');
   const [lambdaValue, setLambdaValue] = useState(0.7);
   const [showOptions, setShowOptions] = useState(false);
@@ -25,6 +25,11 @@ function App() {
   const [loadingHistory, setLoadingHistory] = useState(false);
   const [deleteConfirmDate, setDeleteConfirmDate] = useState(null);
   const [notification, setNotification] = useState({ show: false, message: '', type: '' });
+  const [popover, setPopover] = useState({ show: false, x: 0, y: 0, anchorKey: '', title: '', lines: [], isMobile: false });
+  const [selectedPersonMobile, setSelectedPersonMobile] = useState('');
+  const [asOfDate, setAsOfDate] = useState(null); // 히스토리 상세 조회 시 기준 날짜
+  const [deleteParticipantName, setDeleteParticipantName] = useState(null);
+  const [latestTodayTimeText, setLatestTodayTimeText] = useState('');
 
   // 시뮬레이티드 어닐링 파라미터
   const [saParams, setSaParams] = useState({
@@ -41,10 +46,17 @@ function App() {
     fetchCooccurrenceInfo();
   }, []);
 
+  // 모바일 리스트 기준 인물 보정: 비어있을 경우 첫 참석자를 자동 선택
+  useEffect(() => {
+    if (!selectedPersonMobile && attendingParticipants && attendingParticipants.length > 0) {
+      setSelectedPersonMobile(attendingParticipants[0]);
+    }
+  }, [attendingParticipants, selectedPersonMobile]);
+
   // 람다값이 변경되면 cooccurrence 정보 다시 불러오기
   useEffect(() => {
-    fetchCooccurrenceInfo();
-  }, [lambdaValue]);
+    fetchCooccurrenceInfo(asOfDate);
+  }, [lambdaValue, asOfDate]);
 
   const fetchParticipants = async () => {
     try {
@@ -63,22 +75,87 @@ function App() {
       const response = await axios.get(`${API_BASE_URL}/attending`);
       setAttendingParticipants(response.data);
       console.log(`no bug: ${API_BASE_URL}/attending 여기로 보냈지롱`);
+      // 모바일 기준 인물 기본값 세팅
+      if (response.data && response.data.length > 0) {
+        setSelectedPersonMobile(prev => response.data.includes(prev) ? prev : response.data[0]);
+      } else {
+        setSelectedPersonMobile('');
+      }
     } catch (error) {
       console.error(`니가 별 짓을 다 했지만 나는 ${API_BASE_URL + '/participants'} 여기로 보냈지롱`);
       console.error('참석자 목록을 불러오는데 실패했습니다ㅋㅋㅋㅋㅋㅋ:', error);
     }
   };
 
-  const fetchCooccurrenceInfo = async () => {
+  const fetchCooccurrenceInfo = async (asOf = null) => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/cooccurrence`, {
-        params: { lam: lambdaValue }
-      });
+      const params = { lam: lambdaValue };
+      if (asOf) params.as_of = asOf; // ISO 그대로 전달 (시각 포함)
+      const response = await axios.get(`${API_BASE_URL}/cooccurrence`, { params });
       setCooccurrenceInfo(response.data);
     } catch (error) {
       console.error('공동 참여 정보를 불러오는데 실패했습니다:', error);
     }
   };
+
+  // 페어 정보 헬퍼들
+  const getPairInfo = (a, b) => {
+    if (!a || !b || a === b) return null;
+    return cooccurrenceInfo?.[a]?.[b] || null;
+  };
+
+  // 등급(A-D) 계산을 위한 헬퍼들
+  const getQuartileThresholds = (names) => {
+    const values = [];
+    for (let i = 0; i < names.length; i++) {
+      for (let j = 0; j < names.length; j++) {
+        if (i === j) continue;
+        const a = names[i], b = names[j];
+        const info = getPairInfo(a, b);
+        if (info && typeof info.time_decay_weight === 'number') {
+          values.push(info.time_decay_weight);
+        }
+      }
+    }
+    if (values.length === 0) return [0, 0, 0];
+    values.sort((x, y) => x - y);
+    const q1 = values[Math.floor(values.length * 0.25)];
+    const q2 = values[Math.floor(values.length * 0.50)];
+    const q3 = values[Math.floor(values.length * 0.75)];
+    return [q1, q2, q3];
+  };
+
+  const gradeFromValue = (v, [q1, q2, q3]) => {
+    // 낮을수록 선호 (첫만남 보너스로 음수 가능)
+    if (v <= q1) return 'A';
+    if (v <= q2) return 'B';
+    if (v <= q3) return 'C';
+    return 'D';
+  };
+
+  const gradeColor = (g) => {
+    switch (g) {
+      case 'A': return 'bg-green-100 text-green-800';
+      case 'B': return 'bg-blue-100 text-blue-800';
+      case 'C': return 'bg-yellow-100 text-yellow-800';
+      case 'D': return 'bg-red-100 text-red-800';
+      default: return 'bg-gray-100 text-gray-600';
+    }
+  };
+
+  // 팝오버 열기/닫기
+  const openPopover = (event, title, lines, anchorKey) => {
+    const isMobile = window.innerWidth < 768; // md 미만
+    if (isMobile) {
+      setPopover({ show: true, x: 0, y: 0, title, lines, anchorKey, isMobile: true });
+      return;
+    }
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + window.scrollY + rect.height + 8; // 셀 아래 8px
+    setPopover({ show: true, x, y, title, lines, anchorKey, isMobile: false });
+  };
+  const closePopover = () => setPopover(prev => ({ ...prev, show: false }));
 
   const addParticipant = async (e) => {
     e.preventDefault();
@@ -134,8 +211,19 @@ function App() {
     try {
       const response = await axios.get(`${API_BASE_URL}/has-today-data`);
       const exists = response.data.has_today_data;
-      
+      const latestTime = response.data.latest_time;
       if (exists) {
+        let friendly = '엇, 오늘 이미 조를 짜셨네요! 추가로 한 번 더 만드시겠어요?';
+        if (latestTime) {
+          try {
+            const dt = new Date(latestTime);
+            const t = dt.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
+            friendly = `엇, 오늘 ${t}에 이미 조를 짜셨네요! 추가로 한 번 더 만드시겠어요?`;
+          } catch (e) {
+            // ignore parsing error, keep default
+          }
+        }
+        setLatestTodayTimeText(friendly);
         setHasExistingDataToday(true);
         setShowConfirmPopup(true);
       } else {
@@ -168,6 +256,7 @@ function App() {
       setGroups(response.data.groups);
       setCooccurrenceInfo(response.data.cooccurrence_info);
       setMethodUsed(response.data.method_used);
+      setAsOfDate(null); // 현재 시점 생성이므로 as-of 해제
       setView('results');
     } catch (error) {
       console.error('조 생성에 실패했습니다:', error);
@@ -277,13 +366,17 @@ function App() {
     setGroups(historyItem.groups);
     setMethodUsed(historyItem.method_used);
     setLambdaValue(historyItem.lambda_value);
+    setAsOfDate(historyItem.date);
+    setCooccurrenceInfo({});
+    // 과거 시점 기준 공동참여/가중치 정보를 즉시 재요청
+    fetchCooccurrenceInfo(historyItem.date);
     setView('results');
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">조 생성기</h1>
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-x-hidden">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">HieL Team Maker 🎲</h1>
 
         {/* 알림 메시지 */}
         {notification.show && (
@@ -300,25 +393,17 @@ function App() {
 
         {/* 탭 메뉴 */}
         <div className="border-b border-gray-200 mb-6">
-          <nav className="-mb-px flex space-x-8">
+          <nav className="-mb-px flex flex-wrap gap-2 sm:gap-8">
             <button
               onClick={() => setView('attendance')}
               className={`${view === 'attendance' 
                 ? 'border-indigo-500 text-indigo-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+              } py-2 px-2 border-b-2 font-medium text-xs sm:text-sm break-words basis-[48%] sm:basis-auto`}
             >
               참석 여부 관리
             </button>
-            <button
-              onClick={() => setView('manage')}
-              className={`${view === 'manage' 
-                ? 'border-indigo-500 text-indigo-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
-            >
-              참가자 관리
-            </button>
+            
             <button
               onClick={() => {
                 setView('history');
@@ -327,7 +412,7 @@ function App() {
               className={`${view === 'history' 
                 ? 'border-indigo-500 text-indigo-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+              } py-2 px-2 border-b-2 font-medium text-xs sm:text-sm break-words basis-[48%] sm:basis-auto`}
             >
               조 기록 보기
             </button>
@@ -337,7 +422,7 @@ function App() {
                 className={`${view === 'results' 
                   ? 'border-indigo-500 text-indigo-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+                } py-2 px-2 border-b-2 font-medium text-xs sm:text-sm break-words basis-[48%] sm:basis-auto`}
               >
                 결과 보기
               </button>
@@ -347,57 +432,28 @@ function App() {
               className={`${view === 'options' 
                 ? 'border-indigo-500 text-indigo-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+              } py-2 px-2 border-b-2 font-medium text-xs sm:text-sm break-words basis-[48%] sm:basis-auto`}
             >
               조 생성 옵션
+            </button>
+            <button
+              onClick={() => setView('scores')}
+              className={`${view === 'scores' 
+                ? 'border-indigo-500 text-indigo-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              } py-2 px-2 border-b-2 font-medium text-xs sm:text-sm break-words basis-[48%] sm:basis-auto`}
+            >
+              매칭 등급
             </button>
           </nav>
         </div>
 
-        {view === 'manage' && (
-          <div className="bg-white rounded-lg shadow p-4 mb-6">
-            <h2 className="text-lg font-semibold mb-3">참가자 관리</h2>
-            <form onSubmit={addParticipant} className="flex gap-2">
-              <input
-                type="text"
-                value={newParticipant}
-                onChange={(e) => setNewParticipant(e.target.value)}
-                placeholder="새 참가자 이름"
-                className="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1.5 px-2 text-sm"
-              />
-              <button
-                type="submit"
-                className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500"
-              >
-                <PlusIcon className="h-4 w-4 mr-1" />
-                추가
-              </button>
-            </form>
-
-            {/* 참가자 목록 - 더 콤팩트하게 변경 */}
-            <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2">
-              {participants.map((name) => (
-                <div
-                  key={name}
-                  className="flex items-center justify-between bg-gray-50 rounded-md px-2 py-1.5 text-xs"
-                >
-                  <span className="font-medium text-gray-900 truncate mr-1">{name}</span>
-                  <button
-                    onClick={() => removeParticipant(name)}
-                    className="text-gray-400 hover:text-red-500 flex-shrink-0"
-                  >
-                    <TrashIcon className="h-4 w-4" />
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        
 
         {view === 'attendance' && (
           <div className="bg-white rounded-lg shadow p-4 mb-6">
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-lg font-semibold">조 짜기 반영 여부</h2>
+              <h2 className="text-lg font-semibold">이번 주 출석 인원</h2>
               <div className="flex space-x-2">
                 <button
                   onClick={toggleAllAttendance}
@@ -414,6 +470,24 @@ function App() {
               </div>
             </div>
 
+            {/* 참석 여부 관리 내 참가자 추가 */}
+            <form onSubmit={addParticipant} className="flex gap-2 mb-3">
+              <input
+                type="text"
+                value={newParticipant}
+                onChange={(e) => setNewParticipant(e.target.value)}
+                placeholder="명단에 없는 새로운 팀원 추가"
+                className="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1.5 px-2 text-sm"
+              />
+              <button
+                type="submit"
+                className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500"
+              >
+                <PlusIcon className="h-4 w-4 mr-1" />
+                추가
+              </button>
+            </form>
+
             {/* 모바일 최적화: 그리드를 2열 또는 3열로 설정하고 참가자 카드를 콤팩트하게 변경 */}
             <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2">
               {participants.map((name) => (
@@ -421,30 +495,40 @@ function App() {
                   key={name}
                   className={`border rounded-md px-2 py-1.5 ${isAttending(name) ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
                 >
-                  <label className="flex items-center justify-between cursor-pointer w-full">
-                    <span className={`text-xs font-medium truncate mr-1 ${isAttending(name) ? 'text-green-900' : 'text-gray-700'}`}>
-                      {name}
-                    </span>
-                    <input
-                      type="checkbox"
-                      className="hidden"
-                      checked={isAttending(name)}
-                      onChange={(e) => updateAttendance(name, e.target.checked)}
-                    />
-                    <span 
-                      className={`inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0 ${
-                        isAttending(name) 
-                          ? 'bg-green-500 text-white' 
-                          : 'bg-gray-200 text-gray-400'
-                      }`}
+                  <div className="flex items-center justify-between">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="hidden"
+                        checked={isAttending(name)}
+                        onChange={(e) => updateAttendance(name, e.target.checked)}
+                      />
+                      <span 
+                        className={`inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0 ${
+                          isAttending(name) 
+                            ? 'bg-green-500 text-white' 
+                            : 'bg-gray-200 text-gray-400'
+                        }`}
+                      >
+                        {isAttending(name) ? (
+                          <CheckIcon className="h-3 w-3" />
+                        ) : (
+                          <XMarkIcon className="h-3 w-3" />
+                        )}
+                      </span>
+                      <span className={`text-xs font-medium truncate ${isAttending(name) ? 'text-green-900' : 'text-gray-700'}`}>
+                        {name}
+                      </span>
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => setDeleteParticipantName(name)}
+                      className="text-gray-400 hover:text-red-500 p-1"
+                      title="삭제"
                     >
-                      {isAttending(name) ? (
-                        <CheckIcon className="h-3 w-3" />
-                      ) : (
-                        <XMarkIcon className="h-3 w-3" />
-                      )}
-                    </span>
-                  </label>
+                      <TrashIcon className="h-4 w-4" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -690,7 +774,7 @@ function App() {
                         ))}
                       </div>
                       
-                      {/* 상세 정보 토글 (모바일에서 더 콤팩트하게) */}
+                      {/* 상세 정보 토글 (등급 표시) */}
                       <div className="mt-1 border-t border-gray-200 pt-2">
                         <details className="text-xs text-gray-600">
                           <summary className="font-medium cursor-pointer hover:text-indigo-600 flex items-center">
@@ -702,31 +786,13 @@ function App() {
                           <div className="mt-2 space-y-2">
                             {group.map((member) => (
                               <div key={member} className="bg-white rounded-md p-2 shadow-sm">
-                                <div className="font-medium text-gray-900 mb-1 text-xs">{member}와(과) 같은 조 이력</div>
+                                <div className="font-medium text-gray-900 mb-1 text-xs">{member} 페어 등급</div>
                                 <div className="text-xs text-gray-500 space-y-1">
                                   {group.map((other) => {
                                     if (other === member) return null;
-                                    const info = cooccurrenceInfo[member]?.[other];
+                                    const info = getPairInfo(member, other);
                                     if (!info) return null;
-                                    
-                                    // 조 구성 횟수에 따라 직접 점수 계산 (직관적인 방식)
-                                    let avoidScore;
-                                    if (info.count === 1) avoidScore = 25;
-                                    else if (info.count === 2) avoidScore = 50;
-                                    else if (info.count === 3) avoidScore = 75;
-                                    else if (info.count >= 4) avoidScore = 95;
-                                    else avoidScore = 0;
-                                    
-                                    let scoreColor = "text-green-600";
-                                    
-                                    if (avoidScore > 70) {
-                                      scoreColor = "text-red-600";
-                                    } else if (avoidScore > 40) {
-                                      scoreColor = "text-yellow-600";
-                                    } else if (avoidScore > 20) {
-                                      scoreColor = "text-blue-600";
-                                    }
-                                    
+
                                     let lastMet = "";
                                     if (info.last_occurrence) {
                                       try {
@@ -734,16 +800,21 @@ function App() {
                                         lastMet = `, 마지막: ${lastDate.toLocaleDateString('ko-KR')}`;
                                       } catch (e) {}
                                     }
-                                    
+                                    // 등급 계산 (히스토리 상세면 당시 조 구성원 기준, 아니면 현재 참석자 기준)
+                                    const baseNames = asOfDate ? Array.from(new Set(groups.flat())) : attendingParticipants;
+                                    const thresholds = getQuartileThresholds(baseNames);
+                                    const grade = gradeFromValue(info.time_decay_weight, thresholds);
+
                                     return (
-                                      <div key={other} className="flex justify-between items-center py-1 border-b border-gray-100">
-                                        <span>{other}</span>
-                                        <span>
-                                          <span className="mr-1">{info.count}회</span>
-                                          <span className={scoreColor}>
-                                            ({avoidScore})
-                                          </span>
-                                        </span>
+                                      <div key={other} className="py-1 border-b border-gray-100">
+                                        <div className="flex items-center justify-between">
+                                          <span className="text-gray-700">{other}</span>
+                                          <div className="flex items-center gap-2">
+                                            <span className="text-gray-500">{info.count}회</span>
+                                            <span className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-semibold ${gradeColor(grade)}`}>{grade}</span>
+                                          </div>
+                                        </div>
+                                        <div className="text-[10px] text-gray-400 mt-0.5">{lastMet}</div>
                                       </div>
                                     );
                                   }).filter(Boolean)}
@@ -801,27 +872,196 @@ function App() {
           </div>
         )}
 
+        {/* 매칭 등급 매트릭스 (A-D) */}
+        {view === 'scores' && (
+          <div className="bg-white rounded-lg shadow p-4 mb-6 overflow-auto">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-lg font-semibold">매칭 등급 기준표</h3>
+              <div className="text-xs text-gray-500">람다(λ): {lambdaValue}</div>
+            </div>
+
+            <div className="mb-2 text-xs text-gray-600">
+              <p>아래 등급에 기반하여 새로운 조가 만들어집니다.</p>
+              <p>등급 기준: 현재 참석자 쌍들의 내부 점수를 4단계로 나눠 A(높은 확률) → D(낮은 확률).</p>
+            </div>
+
+            {attendingParticipants.length < 2 ? (
+              <div className="text-sm text-gray-500">참석자를 2명 이상 선택하세요.</div>
+            ) : (
+              <>
+                {/* 모바일: 단일 기준 인물 선택 후 등급 리스트 */}
+                <div className="md:hidden">
+                  <div className="flex items-center gap-2 mb-2">
+                    <label className="text-xs text-gray-600">기준 인물</label>
+                    <select
+                      className="text-xs border border-gray-300 rounded px-2 py-1 bg-white"
+                      value={selectedPersonMobile}
+                      onChange={(e) => setSelectedPersonMobile(e.target.value)}
+                    >
+                      {attendingParticipants.length === 0 && (
+                        <option value="" disabled>선택 없음</option>
+                      )}
+                      {attendingParticipants.map(name => (
+                        <option key={`opt-${name}`} value={name}>{name}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="divide-y divide-gray-200 border border-gray-200 rounded-md overflow-hidden">
+                    {(() => {
+                      const base = selectedPersonMobile;
+                      const baseNames = asOfDate ? Array.from(new Set(groups.flat())) : attendingParticipants;
+                      const thresholds = getQuartileThresholds(baseNames);
+                      return attendingParticipants
+                        .filter(name => name !== base)
+                        .map(name => {
+                          const info = getPairInfo(base, name);
+                          if (!info) return (
+                            <div key={`m-${name}`} className="px-3 py-2 text-xs text-gray-400">{name} · N/A</div>
+                          );
+                          const grade = gradeFromValue(info.time_decay_weight, thresholds);
+                          const cls = gradeColor(grade);
+                          const anchorKey = `${base}-${name}`;
+                          const lines = [
+                            `총 ${info.count}회 만남`,
+                            ...(Array.isArray(info.occurrence_dates) && info.occurrence_dates.length > 0
+                              ? info.occurrence_dates.map(d => {
+                                  try { return new Date(d).toLocaleDateString('ko-KR'); } catch (e) { return d; }
+                                })
+                              : ['기록 없음'])
+                          ];
+                          return (
+                            <button
+                              key={`m-${name}`}
+                              type="button"
+                              onClick={(e) => openPopover(e, `${base} · ${name}`, lines, anchorKey)}
+                              className="w-full flex items-center justify-between px-3 py-2 bg-white hover:bg-gray-50"
+                            >
+                              <span className="text-xs text-gray-700">{name}</span>
+                              <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold ${cls}`}>{grade}</span>
+                            </button>
+                          );
+                        });
+                    })()}
+                  </div>
+                </div>
+
+                {/* 데스크톱: 전체 매트릭스 */}
+                <div className="hidden md:block w-full overflow-auto">
+                  <table className="min-w-full border-separate" style={{ borderSpacing: 0 }}>
+                    <thead>
+                      <tr>
+                        <th className="sticky left-0 z-10 bg-white border-b border-gray-200 text-left text-xs font-medium text-gray-500 px-2 py-1">이름</th>
+                        {attendingParticipants.map(name => (
+                          <th key={`col-${name}`} className="border-b border-gray-200 text-left text-xs font-medium text-gray-500 px-2 py-1 whitespace-nowrap">{name}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {(() => {
+                        const baseNames = asOfDate ? Array.from(new Set(groups.flat())) : attendingParticipants;
+                        const thresholds = getQuartileThresholds(baseNames);
+                        return attendingParticipants.map(rowName => (
+                          <tr key={`row-${rowName}`}>
+                            <th className="sticky left-0 z-10 bg-white border-b border-gray-100 text-xs font-medium text-gray-700 px-2 py-1 whitespace-nowrap">{rowName}</th>
+                            {attendingParticipants.map(colName => {
+                              if (rowName === colName) {
+                                return (
+                                  <td key={`${rowName}-${colName}`} className="border-b border-gray-100 px-2 py-1 text-center text-[10px] text-gray-400">—</td>
+                                );
+                              }
+                              const info = getPairInfo(rowName, colName);
+                              if (!info) {
+                                return (
+                                  <td key={`${rowName}-${colName}`} className="border-b border-gray-100 px-2 py-1 text-center text-[10px] text-gray-400">N/A</td>
+                                );
+                              }
+                              const grade = gradeFromValue(info.time_decay_weight, thresholds);
+                              const cls = gradeColor(grade);
+                              const anchorKey = `${rowName}-${colName}`;
+                              const lines = [
+                                `총 ${info.count}회 만남`,
+                                ...(Array.isArray(info.occurrence_dates) && info.occurrence_dates.length > 0
+                                  ? info.occurrence_dates.map(d => {
+                                      try {
+                                        const dt = new Date(d);
+                                        return dt.toLocaleDateString('ko-KR');
+                                      } catch (e) { return d; }
+                                    })
+                                  : ['기록 없음'])
+                              ];
+                              return (
+                                <td key={`${rowName}-${colName}`} className="border-b border-gray-100 px-2 py-1 text-center whitespace-nowrap">
+                                  <button
+                                    type="button"
+                                    onClick={(e) => openPopover(e, `${rowName} · ${colName}`, lines, anchorKey)}
+                                    className={`inline-block min-w-[24px] px-1 rounded ${cls} hover:opacity-90 focus:outline-none`}
+                                  >
+                                    {grade}
+                                  </button>
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        ));
+                      })()}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            )}
+
+            <div className="mt-3 text-xs text-gray-500">
+              <p>등급은 현재 참석자 집합 내 상대적인 4분위 기준입니다.</p>
+            </div>
+          </div>
+        )}
+
+        {/* 팝오버: 자연스러운 카드형 오버레이 */}
+        {popover.show && (
+          popover.isMobile ? (
+            <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
+              <div className="absolute inset-0 bg-black bg-opacity-30" onClick={closePopover}></div>
+              <div className="relative bg-white w-full md:w-80 rounded-t-lg md:rounded-lg shadow-xl border border-gray-200">
+                <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between">
+                  <div className="text-sm font-semibold text-gray-800 truncate">{popover.title}</div>
+                  <button onClick={closePopover} className="text-gray-400 hover:text-gray-600 text-sm">✕</button>
+                </div>
+                <div className="p-4 max-h-[60vh] overflow-auto">
+                  <ul className="text-sm text-gray-700 space-y-1 list-disc pl-5">
+                    {popover.lines.map((line, idx) => (
+                      <li key={`${popover.anchorKey}-${idx}`}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div
+              className="absolute z-50"
+              style={{ left: popover.x, top: popover.y, transform: 'translateX(-50%)' }}
+            >
+              <div className="bg-white shadow-lg rounded-md border border-gray-200 w-64">
+                <div className="px-3 py-2 border-b border-gray-100 flex items-center justify-between">
+                  <div className="text-xs font-semibold text-gray-800 truncate">{popover.title}</div>
+                  <button onClick={closePopover} className="text-gray-400 hover:text-gray-600 text-xs">✕</button>
+                </div>
+                <div className="p-3 max-h-56 overflow-auto">
+                  <ul className="text-xs text-gray-700 space-y-1 list-disc pl-4">
+                    {popover.lines.map((line, idx) => (
+                      <li key={`${popover.anchorKey}-${idx}`}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )
+        )}
+
         {/* 조 생성 기록 */}
         {view === 'history' && (
           <div className="bg-white rounded-lg shadow p-4 mb-6">
             <div className="flex justify-between items-center mb-3">
               <h2 className="text-lg font-semibold">조 생성 기록</h2>
-              <div className="flex space-x-2">
-                <button
-                  onClick={() => deleteTodayData()}
-                  className="inline-flex items-center px-2 py-1 border border-orange-300 text-xs font-medium rounded-md text-orange-700 bg-white hover:bg-orange-50"
-                  disabled={teamHistory.length === 0}
-                >
-                  오늘 중복 데이터 정리
-                </button>
-                <button
-                  onClick={() => setDeleteConfirmDate('all')}
-                  className="inline-flex items-center px-2 py-1 border border-red-300 text-xs font-medium rounded-md text-red-700 bg-white hover:bg-red-50"
-                  disabled={teamHistory.length === 0}
-                >
-                  전체 기록 삭제
-                </button>
-              </div>
             </div>
 
             {loadingHistory ? (
@@ -897,31 +1137,23 @@ function App() {
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-lg p-6 shadow-xl max-w-md w-full">
               <h3 className="text-lg font-medium text-gray-900 mb-4">
-                오늘 이미 생성된 조 데이터가 있습니다
+                확인해주세요
               </h3>
               <p className="text-sm text-gray-500 mb-6">
-                오늘 날짜에 이미 만들어진 조 데이터가 있습니다. 어떻게 하시겠습니까?
+                {latestTodayTimeText || '엇, 오늘 이미 조를 짜셨네요! 추가로 한 번 더 만드시겠어요?'}
               </p>
               <div className="flex flex-col space-y-3">
                 <button
                   onClick={() => generateTeamsExecute(true)}
                   className="inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  오늘 기존 조 데이터 유지하고 추가 생성하기
-                  <span className="block ml-2 text-xs opacity-80">(하루에 여러 번 조 구성이 필요한 경우)</span>
-                </button>
-                <button
-                  onClick={() => generateTeamsExecute(false)}
-                  className="inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  오늘 기존 조 데이터 삭제하고 새로 만들기
-                  <span className="block ml-2 text-xs opacity-80">(실수로 팀을 잘못 짰거나 다시 짜고 싶은 경우)</span>
+                  네, 추가로 만들게요
                 </button>
                 <button
                   onClick={() => setShowConfirmPopup(false)}
-                  className="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700"
+                  className="inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  취소
+                  아뇨, 괜찮아요
                 </button>
               </div>
             </div>
@@ -957,9 +1189,38 @@ function App() {
             </div>
           </div>
         )}
+
+        {/* 참가자 삭제 확인 팝업 */}
+        {deleteParticipantName && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg p-6 shadow-xl max-w-md w-full">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">
+                참가자 삭제 확인
+              </h3>
+              <p className="text-sm text-gray-500 mb-6">
+                {`${deleteParticipantName}을(를) 삭제할까요?`}
+              </p>
+              <div className="flex flex-row-reverse space-x-2 space-x-reverse">
+                <button
+                  onClick={() => { removeParticipant(deleteParticipantName); setDeleteParticipantName(null); }}
+                  className="inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                >
+                  삭제
+                </button>
+                <button
+                  onClick={() => setDeleteParticipantName(null)}
+                  className="inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  취소
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default App;
+

@@ -15,6 +15,7 @@ class CooccurrenceInfo(BaseModel):
     last_week: Optional[int] = None
     weeks_ago: Optional[int] = None
     time_decay_weight: float
+    occurrence_dates: Optional[List[str]] = None
 
 class TeamGenerationRequest(BaseModel):
     participants: List[str]

@@ -9,6 +9,7 @@ class TeamGenerator:
         self.team_history_file = team_history_file
         self.past_dates: Dict[str, Dict[str, List[str]]] = {}
         self.base_date: date = None  # 기준 날짜 (Week 1)
+        self.current_date: date = None  # 현재 주차 계산에 사용할 기준 날짜 (None이면 today)
         
         # 시간 감쇠 파라미터
         self.decay_rate = 0.85  # 시간 감쇠율 (0~1, 낮을수록 빠르게 감쇠)
@@ -18,8 +19,14 @@ class TeamGenerator:
         self.first_meeting_bonus = -0.6  # 첫 만남 보너스 (음수 = 선호)
         self.base_penalty = 3.0      # 기본 페널티
 
-    def load_past_cooccurrence_from_history(self, participants: List[str]) -> None:
-        """Load past co-occurrence data from team history with time decay consideration."""
+    def load_past_cooccurrence_from_history(self, participants: List[str], as_of_iso: str = None) -> None:
+        """Load past co-occurrence data from team history with time decay consideration.
+
+        Parameters:
+            participants: 등급/가중치를 계산할 참가자 목록
+            as_of_iso: ISO 형식 날짜/시간 문자열. 주어지면 해당 시점까지의 기록만 사용하며,
+                      현재 주차 계산의 기준 날짜도 이 값으로 설정함
+        """
         try:
             with open(self.team_history_file, "r", encoding='utf-8') as f:
                 history = json.load(f)
@@ -32,18 +39,61 @@ class TeamGenerator:
             print(f"[디버깅] JSON 파싱 오류: {self.team_history_file}")
             history = []
 
-        # 기준 날짜 설정 (가장 오래된 기록을 Week 1로)
-        if history:
-            dates = []
+        # as-of 필터 적용 및 현재 기준 날짜 설정
+        as_of_date = None
+        as_of_dt = None
+        if as_of_iso:
+            try:
+                # datetime 또는 date 모두 허용
+                as_of_dt = datetime.fromisoformat(as_of_iso)
+                as_of_date = as_of_dt.date()
+            except Exception:
+                # 날짜만 들어온 경우 대비
+                try:
+                    as_of_date = datetime.fromisoformat(as_of_iso[:10]).date()
+                    as_of_dt = datetime.combine(as_of_date, datetime.min.time())
+                except Exception:
+                    as_of_date = None
+                    as_of_dt = None
+
+        if as_of_date is not None:
+            history_filtered = []
             for record in history:
+                try:
+                    record_dt = datetime.fromisoformat(record['date'])
+                    record_date = record_dt.date()
+                except Exception:
+                    try:
+                        record_date = datetime.fromisoformat(record['date'][:10]).date()
+                        record_dt = datetime.combine(record_date, datetime.min.time())
+                    except Exception:
+                        continue
+                # as-of 기준 이전(시각 포함)만 사용
+                if as_of_dt is not None:
+                    if record_dt < as_of_dt:
+                        history_filtered.append(record)
+                elif record_date < as_of_date:
+                    history_filtered.append(record)
+            self.current_date = as_of_date
+            print(f"[디버깅] as-of 필터 적용: {as_of_date} 까지 {len(history_filtered)}건 사용")
+        else:
+            history_filtered = history
+            self.current_date = date.today()
+            print(f"[디버깅] as-of 미지정: 현재 날짜 {self.current_date} 기준")
+
+        # 기준 날짜 설정 (가장 오래된 기록을 Week 1로)
+        if history_filtered:
+            dates = []
+            for record in history_filtered:
                 record_date_str = record['date'][:10]
                 dates.append(datetime.fromisoformat(record_date_str).date())
             dates.sort()
             self.base_date = dates[0]
             print(f"[디버깅] 기준 날짜 설정 (Week 1): {self.base_date}")
         else:
-            self.base_date = date.today()
-            print(f"[디버깅] 기록이 없어 현재 날짜를 기준으로 설정: {self.base_date}")
+            # 기록이 없다면 as-of 또는 오늘 날짜를 기준으로 설정
+            self.base_date = self.current_date or date.today()
+            print(f"[디버깅] 기록이 없어 기준 날짜를 {self.base_date} 로 설정")
 
         # 참가자별 공동 참여 데이터 초기화
         self.past_dates = {}
@@ -55,7 +105,7 @@ class TeamGenerator:
 
         # 팀 히스토리에서 공동 참여 데이터 생성 (모든 기록 사용, 윈도우 제한 없음)
         valid_records = 0
-        for record in history:
+        for record in history_filtered:
             try:
                 record_date_str = record['date'][:10]
                 valid_records += 1
@@ -77,7 +127,7 @@ class TeamGenerator:
         """현재 주차를 계산 (기준 날짜로부터)"""
         if self.base_date is None:
             return 1
-        today = date.today()
+        today = self.current_date or date.today()
         days_from_base = (today - self.base_date).days
         return (days_from_base // 7) + 1
 
@@ -152,7 +202,8 @@ class TeamGenerator:
                     "last_occurrence": last_occurrence,
                     "last_week": last_week,
                     "weeks_ago": weeks_ago,
-                    "time_decay_weight": weight
+                    "time_decay_weight": weight,
+                    "occurrence_dates": dates
                 }
         return info
 

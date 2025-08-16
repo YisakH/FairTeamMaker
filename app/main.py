@@ -199,10 +199,15 @@ async def reset_attendance():
     return {"message": "모든 참가자의 참석 여부가 초기화되었습니다."}
 
 @app.get("/api/cooccurrence")
-async def get_cooccurrence_info(lam: float = 0.7) -> Dict[str, Dict[str, CooccurrenceInfo]]:
-    """모든 참가자 쌍의 공동 참여 정보를 반환합니다."""
+async def get_cooccurrence_info(lam: float = 0.7, as_of: str | None = None) -> Dict[str, Dict[str, CooccurrenceInfo]]:
+    """모든 참가자 쌍의 공동 참여 정보를 반환합니다.
+
+    Query Params:
+      - lam: 확률 변환용 람다
+      - as_of: ISO 날짜(또는 날짜시간) 문자열. 제공 시 해당 시점까지의 기록으로 계산
+    """
     participants = await get_participants()
-    team_generator.load_past_cooccurrence_from_history(participants)
+    team_generator.load_past_cooccurrence_from_history(participants, as_of_iso=as_of)
     return team_generator.get_cooccurrence_info(participants, lam)
 
 @app.post("/api/generate")
@@ -237,6 +242,7 @@ async def generate_teams(request: TeamGenerationRequest) -> TeamGenerationRespon
         cooccurrence_info=cooccurrence_info,
         method_used=method_used
     )
+
 
 # 조 생성 기록 저장 함수
 async def save_team_history(groups: List[List[str]], method_used: str, lambda_value: float, participants_count: int):
@@ -471,15 +477,15 @@ async def delete_today_data() -> TodayDataDeleteResponse:
 
 @app.get("/api/has-today-data")
 async def check_today_data():
-    """오늘 날짜에 생성된 팀 데이터가 있는지 확인합니다."""
+    """오늘 날짜에 생성된 팀 데이터가 있는지와 마지막 생성 시각을 반환합니다."""
+    today_str = date.today().isoformat()
+    has_today_data = False
+    latest_time_iso = None
+
+    # 공동참여 데이터로 존재 여부 확인
     try:
         with open(COOCCURRENCE_FILE, "r", encoding='utf-8') as f:
             data = json.load(f)
-        
-        today_str = date.today().isoformat()
-        has_today_data = False
-        
-        # 오늘 날짜의 데이터가 있는지 확인
         for person in data:
             for other in data.get(person, {}):
                 dates = data[person][other]
@@ -488,9 +494,32 @@ async def check_today_data():
                     break
             if has_today_data:
                 break
-        
-        return {"has_today_data": has_today_data}
     except FileNotFoundError:
-        return {"has_today_data": False}
+        has_today_data = False
     except Exception as e:
-        return {"has_today_data": False, "error": str(e)} 
+        return {"has_today_data": False, "error": str(e)}
+
+    # 팀 히스토리에서 오늘 마지막 생성 시각 조회
+    try:
+        with open(TEAM_HISTORY_FILE, "r", encoding='utf-8') as f:
+            history = json.load(f)
+        if isinstance(history, list) and history:
+            from datetime import datetime
+            today_items = []
+            for item in history:
+                try:
+                    dt = datetime.fromisoformat(item.get("date", ""))
+                    if dt.date().isoformat() == today_str:
+                        today_items.append(dt)
+                except Exception:
+                    continue
+            if today_items:
+                latest_dt = max(today_items)
+                latest_time_iso = latest_dt.isoformat()
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+
+    response = {"has_today_data": has_today_data}
+    if latest_time_iso:
+        response["latest_time"] = latest_time_iso
+    return response

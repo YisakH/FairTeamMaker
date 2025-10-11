@@ -44,6 +44,29 @@ function App() {
     fetchParticipants();
     fetchAttendingParticipants();
     fetchCooccurrenceInfo();
+    
+    // Kakao SDK 초기화 - 스크립트 로딩을 기다림
+    const initKakaoSDK = () => {
+      if (window.Kakao) {
+        if (!window.Kakao.isInitialized()) {
+          try {
+            window.Kakao.init('c42369797d199b2a47843b461ab2a38b');
+            console.log('✅ Kakao SDK initialized:', window.Kakao.isInitialized());
+          } catch (error) {
+            console.error('❌ Kakao SDK 초기화 실패:', error);
+          }
+        } else {
+          console.log('✅ Kakao SDK already initialized');
+        }
+      } else {
+        console.log('⏳ Kakao SDK not loaded yet, waiting...');
+        // SDK가 아직 로드되지 않았으면 0.5초 후 재시도
+        setTimeout(initKakaoSDK, 500);
+      }
+    };
+    
+    // 초기화 시도
+    initKakaoSDK();
   }, []);
 
   // 모바일 리스트 기준 인물 보정: 비어있을 경우 첫 참석자를 자동 선택
@@ -371,6 +394,108 @@ function App() {
     // 과거 시점 기준 공동참여/가중치 정보를 즉시 재요청
     fetchCooccurrenceInfo(historyItem.date);
     setView('results');
+  };
+
+  // 카카오톡으로 공유하기
+  const shareToKakao = () => {
+    console.log('shareToKakao called');
+    console.log('window.Kakao:', window.Kakao);
+    console.log('isInitialized:', window.Kakao ? window.Kakao.isInitialized() : 'N/A');
+    
+    if (!window.Kakao) {
+      alert('카카오톡 SDK가 로드되지 않았습니다. 페이지를 새로고침해보세요.');
+      copyTeamText();
+      return;
+    }
+    
+    if (!window.Kakao.isInitialized()) {
+      alert('카카오톡 SDK가 초기화되지 않았습니다. 페이지를 새로고침해보세요.');
+      copyTeamText();
+      return;
+    }
+
+    try {
+      // 팀 정보를 텍스트로 포맷팅
+      const teamText = formatTeamText();
+      
+      window.Kakao.Share.sendDefault({
+        objectType: 'text',
+        text: teamText,
+        link: {
+          mobileWebUrl: window.location.href,
+          webUrl: window.location.href,
+        },
+      });
+      
+      console.log('카카오톡 공유 성공');
+    } catch (error) {
+      console.error('카카오톡 공유 실패:', error);
+      alert('카카오톡 공유에 실패했습니다. 텍스트를 복사합니다.');
+      copyTeamText();
+    }
+  };
+
+  // 팀 정보를 텍스트로 포맷팅
+  const formatTeamText = () => {
+    const dateStr = asOfDate 
+      ? new Date(asOfDate).toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' })
+      : new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+    
+    let text = `📋 ${dateStr} 팀 구성 결과\n\n`;
+    
+    groups.forEach((group, index) => {
+      text += `🔹 조 ${index + 1} (${group.length}명)\n`;
+      text += `${group.join(', ')}\n\n`;
+    });
+    
+    text += `✨ 총 ${groups.length}개 조, ${groups.flat().length}명 참여`;
+    
+    return text;
+  };
+
+  // 팀 정보를 클립보드에 복사
+  const copyTeamText = () => {
+    const teamText = formatTeamText();
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(teamText)
+        .then(() => {
+          setNotification({
+            show: true,
+            message: '팀 구성이 클립보드에 복사되었습니다! 카카오톡에 붙여넣기 하세요.',
+            type: 'success'
+          });
+          setTimeout(() => setNotification({...notification, show: false}), 3000);
+        })
+        .catch(err => {
+          console.error('복사 실패:', err);
+          alert('클립보드 복사에 실패했습니다.');
+        });
+    } else {
+      // 구형 브라우저 대응
+      const textArea = document.createElement('textarea');
+      textArea.value = teamText;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        setNotification({
+          show: true,
+          message: '팀 구성이 클립보드에 복사되었습니다! 카카오톡에 붙여넣기 하세요.',
+          type: 'success'
+        });
+        setTimeout(() => setNotification({...notification, show: false}), 3000);
+      } catch (err) {
+        console.error('복사 실패:', err);
+        alert('클립보드 복사에 실패했습니다.');
+      }
+      
+      document.body.removeChild(textArea);
+    }
   };
 
   return (
@@ -727,7 +852,31 @@ function App() {
           <div className="space-y-4">
             {/* 조 목록 (상단으로 이동) */}
             <div className="bg-white rounded-lg shadow p-4">
-              <h2 className="text-lg font-semibold mb-3">조 구성</h2>
+              <div className="flex justify-between items-center mb-3">
+                <h2 className="text-lg font-semibold">조 구성</h2>
+                <div className="flex gap-2">
+                  <button
+                    onClick={shareToKakao}
+                    className="inline-flex items-center px-3 py-1.5 border border-yellow-400 text-xs font-medium rounded-md text-gray-800 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                    title="카카오톡으로 공유하기"
+                  >
+                    <svg className="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 3c5.799 0 10.5 3.664 10.5 8.185 0 4.52-4.701 8.184-10.5 8.184a13.5 13.5 0 0 1-1.727-.11l-4.408 2.883c-.501.265-.678.236-.472-.413l.892-3.678c-2.88-1.46-4.785-3.99-4.785-6.866C1.5 6.665 6.201 3 12 3zm5.907 8.06l1.47-1.424a.472.472 0 0 0-.656-.681l-1.928 1.866V9.282a.472.472 0 0 0-.944 0v2.557a.471.471 0 0 0 0 .222V13.5a.472.472 0 0 0 .944 0v-1.363l.427-.413 1.428 2.033a.472.472 0 1 0 .773-.543l-1.514-2.155zm-2.958 1.924h-1.46V9.297a.472.472 0 0 0-.943 0v4.159c0 .26.21.472.471.472h1.932a.472.472 0 1 0 0-.944zm-5.857-1.092l.696-1.707.638 1.707H9.092zm2.523.488l.002-.016a.469.469 0 0 0-.127-.32l-1.046-2.8a.69.69 0 0 0-.627-.474.696.696 0 0 0-.653.447l-1.661 4.075a.472.472 0 0 0 .874.357l.33-.813h2.07l.299.8a.472.472 0 1 0 .884-.33l-.345-.926zM8.293 9.302a.472.472 0 0 0-.471-.472H4.577a.472.472 0 1 0 0 .944h1.16v3.736a.472.472 0 0 0 .944 0V9.774h1.14c.261 0 .472-.212.472-.472z"/>
+                    </svg>
+                    카톡 공유
+                  </button>
+                  <button
+                    onClick={copyTeamText}
+                    className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    title="텍스트 복사"
+                  >
+                    <svg className="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    복사
+                  </button>
+                </div>
+              </div>
               
               <div className="mb-3 p-2 bg-gray-50 rounded-md text-xs">
                 <div className="grid grid-cols-2 gap-1">

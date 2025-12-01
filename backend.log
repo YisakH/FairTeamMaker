@@ -1,725 +1,1521 @@
-INFO:     Started server process [61071]
+INFO:     Started server process [75610]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 17
-[디버깅] as-of 미지정: 현재 날짜 2025-10-03 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 17
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:39030 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:39036 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:39048 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 17
-[디버깅] as-of 미지정: 현재 날짜 2025-10-03 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 17
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:39060 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:39072 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:39082 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 17
-[디버깅] as-of 미지정: 현재 날짜 2025-10-03 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 17
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:39092 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 17
-[디버깅] as-of 미지정: 현재 날짜 2025-10-03 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 17
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:39100 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:39102 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 17
-[디버깅] as-of 미지정: 현재 날짜 2025-10-03 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 17
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 12.9427
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: 2.5838
-INFO:     192.168.30.205:39118 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42540 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42556 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 18
-[디버깅] as-of 미지정: 현재 날짜 2025-10-03 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 18
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:42560 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42570 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 18
-[디버깅] as-of 미지정: 현재 날짜 2025-10-03 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 18
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 13.8394
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: 8.2556
-INFO:     192.168.30.205:42584 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47832 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47848 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 19
-[디버깅] as-of 미지정: 현재 날짜 2025-10-04 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 19
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:47864 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47868 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-03
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:47870 - "DELETE /api/team-history/2025-10-03T23%3A01%3A19.010871 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47878 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-03
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:60732 - "DELETE /api/team-history/2025-10-03T23%3A00%3A50.554332 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:60738 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-03
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:60740 - "DELETE /api/team-history/2025-10-03T22%3A14%3A10.700572 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:60750 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-03
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:60754 - "DELETE /api/team-history/2025-10-03T22%3A13%3A26.757124 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:60764 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:35100 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-04 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 8.4056
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -0.8080
-INFO:     192.168.30.205:35114 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55342 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55352 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 16
-[디버깅] as-of 미지정: 현재 날짜 2025-10-04 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 16
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:55358 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55368 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-04
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:36370 - "DELETE /api/team-history/2025-10-04T11%3A30%3A05.573608 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:36386 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:53764 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:53776 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:53792 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:53808 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:53820 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:53836 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:53846 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:53848 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:53852 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:36940 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:36944 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:36954 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:36968 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:41988 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 6.6925
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -0.4510
-INFO:     192.168.30.205:41998 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47714 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 16
-[디버깅] as-of 필터 적용: 2025-10-05 까지 15건 사용
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:50978 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T01:27:22.527605 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:50994 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-05
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:51002 - "DELETE /api/team-history/2025-10-05T01%3A27%3A22.527605 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:51004 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:37240 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:37250 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 15
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:37254 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:37258 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 15
-[디버깅] as-of 필터 적용: 2025-09-28 까지 14건 사용
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:37268 - "GET /api/cooccurrence?lam=0.7&as_of=2025-09-28T10:45:05.302078 HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-09-28
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:53028 - "DELETE /api/team-history/2025-09-28T10%3A45%3A05.302078 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:53036 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:56224 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:56226 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:56228 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:38320 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-09-14
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:42900 - "DELETE /api/team-history/2025-09-14T10%3A38%3A49.769372 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42904 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42920 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42930 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:42944 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:34286 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 0.2792
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -2.3414
-INFO:     192.168.30.205:34290 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:40960 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-05
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:40964 - "DELETE /api/team-history/2025-10-05T01%3A33%3A18.918032 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:40972 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55560 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 1.3685
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -2.6604
-INFO:     192.168.30.205:55570 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55580 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-05
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:33378 - "DELETE /api/team-history/2025-10-05T01%3A33%3A32.569451 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33382 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33386 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 1.0538
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -2.5573
-INFO:     192.168.30.205:33394 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58172 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-05
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:44984 - "DELETE /api/team-history/2025-10-05T01%3A33%3A48.791405 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45000 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:50072 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49728 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49742 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:49756 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:51682 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 필터 적용: 2025-09-21 까지 12건 사용
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 12
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:51696 - "GET /api/cooccurrence?lam=0.7&as_of=2025-09-21T10:40:52.966848 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47562 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
-INFO:     192.168.30.205:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
-INFO:     192.168.30.205:53812 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:53824 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:53838 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:40714 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:40718 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:40734 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:41262 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 3.2621
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -2.2551
-INFO:     192.168.30.205:41272 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:39802 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-05
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:41812 - "DELETE /api/team-history/2025-10-05T10%3A21%3A55.651954 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:41826 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:59140 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:59146 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:59154 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44276 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44292 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:44294 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44304 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55096 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:55100 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:55116 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48294 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48302 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48318 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48326 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:36802 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:36804 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45882 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45896 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:32784 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:32800 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:32808 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:32820 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:60430 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 13
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 13
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 20
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 1.9824
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -1.5111
-INFO:     192.168.30.205:60440 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49010 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49020 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:49028 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49040 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49048 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:49058 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45650 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45654 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:45658 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45670 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:45676 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45680 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45696 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45704 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:45706 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:45720 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45728 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45732 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45734 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:45740 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45746 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:45756 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:34500 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48096 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48104 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:48108 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:52904 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:52920 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:52926 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:52936 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:52942 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:52950 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:52952 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:52962 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33152 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33166 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:33172 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33176 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33184 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:33196 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:33210 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:33218 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33230 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:33238 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33240 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33248 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:33258 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:59126 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:59140 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:59146 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:46834 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:46850 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:46864 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:46870 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:46874 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:46890 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58932 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58944 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:58946 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58948 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49600 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:49608 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:49610 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:56228 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
-INFO:     192.168.30.205:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
-INFO:     192.168.30.205:46128 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-05 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:46142 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:46150 - "GET /api/attending HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-07 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:45444 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45450 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:45460 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
-INFO:     192.168.30.205:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
-INFO:     192.168.30.205:37376 - "GET /api/participants HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 27
-INFO:     192.168.30.205:37378 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:37384 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58840 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42866 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:42874 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47560 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47564 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47572 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47586 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47598 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47610 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47614 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47624 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47640 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47644 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58008 - "POST /api/attendance HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58010 - "GET /api/attending HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58016 - "DELETE /api/participants/%EB%B0%95%EC%9D%80%EC%98%81 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58032 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58046 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/participants HTTP/1.1" 200 OK
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
 [디버깅] 히스토리 기록 수: 14
 [디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
 [디버깅] 처리된 기록 수: 14
 [디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-INFO:     192.168.30.205:58060 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:43590 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:60696 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 1.8684
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -4.6534
-INFO:     192.168.30.205:60706 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58116 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-12
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:50544 - "DELETE /api/team-history/2025-10-12T01%3A29%3A42.966281 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:50552 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:50564 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: -0.1130
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -3.9666
-INFO:     192.168.30.205:50572 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:50580 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-12
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:44412 - "DELETE /api/team-history/2025-10-12T01%3A30%3A05.843963 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44422 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:44438 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 1.6672
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -3.7863
-INFO:     192.168.30.205:44450 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:39182 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-12
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:56202 - "DELETE /api/team-history/2025-10-12T01%3A30%3A21.515473 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:56206 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:56220 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 0.5971
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -4.5162
-INFO:     192.168.30.205:56224 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:56236 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-12
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:56248 - "DELETE /api/team-history/2025-10-12T01%3A30%3A33.918381 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:56254 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48290 - "GET /api/has-today-data HTTP/1.0" 200 OK
-[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
-[디버깅] 히스토리 기록 수: 14
-[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
-[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
-[디버깅] 처리된 기록 수: 14
-[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
-[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 0.7102
-[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -4.5638
-INFO:     192.168.30.205:48292 - "POST /api/generate HTTP/1.0" 200 OK
-INFO:     192.168.30.205:48298 - "GET /api/team-history HTTP/1.0" 200 OK
-[디버깅] 삭제 대상 날짜: 2025-10-12
-[디버깅] cooccurrence 데이터 삭제 중 오류: [Errno 2] No such file or directory: 'data/cooccurrence.json'
-INFO:     192.168.30.205:47222 - "DELETE /api/team-history/2025-10-12T01%3A30%3A42.648715 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:47228 - "GET /api/team-history HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58396 - "GET /api/participants HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58402 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/cooccurrence?lam=0.7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:0 - "GET /api/attending HTTP/1.1" 200 OK
+INFO:     192.168.30.205:52880 - "GET /api/participants HTTP/1.0" 200 OK
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
 [디버깅] 히스토리 기록 수: 14
 [디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
 [디버깅] 처리된 기록 수: 14
 [디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-INFO:     192.168.30.205:58410 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
-INFO:     192.168.30.205:58426 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52884 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52886 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52900 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52906 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52920 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52930 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52936 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52944 - "GET /api/team-history HTTP/1.0" 200 OK
 [디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
 [디버깅] 히스토리 기록 수: 14
 [디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
 [디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
 [디버깅] 처리된 기록 수: 13
 [디버깅] 생성된 공동 참여 데이터 참가자 수: 26
-INFO:     192.168.30.205:58442 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52950 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52954 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42246 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42260 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:42264 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42276 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42286 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:42292 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:42296 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:42302 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42314 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:36972 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:36986 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:48630 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:48644 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:48658 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:48670 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:48684 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:48686 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:48688 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:48690 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:48702 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52110 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52118 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52122 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52130 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52146 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52152 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52164 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52166 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52178 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52192 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52200 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-09-21 까지 12건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 12
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:36230 - "GET /api/cooccurrence?lam=0.7&as_of=2025-09-21T10:40:52.966848 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-09-21 까지 12건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 12
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:36234 - "GET /api/cooccurrence?lam=0.7&as_of=2025-09-21T10:40:52.966848 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49842 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49850 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49854 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49866 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49876 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49884 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49894 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49904 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49920 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49928 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 필터 적용: 2025-10-05 까지 13건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 13
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49942 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-05T10:47:34.215666 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49252 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:41108 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:41120 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:41124 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49716 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49732 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49748 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49764 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49774 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49776 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59560 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59568 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59576 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59580 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53242 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53246 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:51582 - "GET /api/has-today-data HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 14
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 24
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 0.3137
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -3.9588
+INFO:     192.168.30.205:51590 - "POST /api/generate HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56862 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56872 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:56880 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56888 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:56890 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56892 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:56902 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56904 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56912 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56918 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:56932 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56940 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:56942 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56954 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56968 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:56978 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56992 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56996 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57008 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57024 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57030 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57040 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57056 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57058 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57064 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57080 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57084 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57092 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57104 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57108 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57124 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57130 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57138 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57150 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57166 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57182 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57188 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57196 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57204 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57218 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57224 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57228 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57240 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57248 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57260 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57266 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57272 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57288 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57298 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54588 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54604 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54614 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54620 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54636 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54646 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54648 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54660 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54676 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54692 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54696 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54712 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54728 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54736 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54746 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54754 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54758 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54768 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54778 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54792 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54806 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50084 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50088 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:50094 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50098 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:50108 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50124 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:50132 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50142 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59926 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59942 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59952 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:59958 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:59964 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44076 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44078 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:44084 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44086 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:44090 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53086 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53090 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:53100 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42898 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54316 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54328 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-12 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54342 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54346 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54356 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33392 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-13 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:33402 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33410 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33426 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:33432 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-13 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54382 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54388 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54392 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54394 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 필터 적용: 2025-10-12 까지 14건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 14
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54408 - "GET /api/cooccurrence?lam=0.7&as_of=2025-10-12T10:40:06.550903 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46852 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46864 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-23 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46872 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46888 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46896 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-23 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46900 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-23 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46912 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-23 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46920 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46930 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38010 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-26 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:38022 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38026 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38038 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-26 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:38042 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38056 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-26 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:38070 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-26 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:38084 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-27 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:45484 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:45488 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:45496 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:45504 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-27 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:45516 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:45532 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-27 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:45534 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-27 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:45550 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46016 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46022 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-31 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46038 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46040 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:46056 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-31 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46064 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-31 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46076 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-10-31 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46086 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:37206 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:37222 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:37230 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:37244 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:37260 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:37264 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:37272 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44590 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44598 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44602 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44608 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44622 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:44630 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:37372 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33522 - "GET /api/has-today-data HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 15
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 23
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: -0.2813
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -6.1569
+INFO:     192.168.30.205:33530 - "POST /api/generate HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52316 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52326 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52342 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:52354 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:52366 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58462 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58478 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58486 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58490 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58500 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58508 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58518 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58532 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58542 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58544 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58546 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58560 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58572 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58586 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58600 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58604 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58610 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58618 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58620 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58626 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58636 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58642 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58654 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58670 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58686 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58702 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33794 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33802 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:33814 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33828 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:33838 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:60394 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:60400 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:60414 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:60428 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:60432 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38570 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38580 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:38582 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38590 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:38602 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:34902 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:34916 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:34928 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:34910 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:34920 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:34934 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:34946 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 필터 적용: 2025-11-09 까지 15건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 15
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:34954 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-09T10:54:34.016317 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53174 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-09 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:53176 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53192 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58794 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58800 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:58816 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58818 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:58822 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43102 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43106 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43116 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43128 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43132 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43138 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43152 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33248 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33264 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33280 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33296 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59706 - "GET /api/has-today-data HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 16
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 22
+[디버깅] 시뮬레이티드 어닐링 시작 - 초기 비용: 3.3605
+[디버깅] 시뮬레이티드 어닐링 완료 - 최종 비용: -0.7486
+INFO:     192.168.30.205:59720 - "POST /api/generate HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39398 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39412 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39426 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39442 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:46684 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:35346 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49862 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:39222 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39236 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39248 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39256 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39258 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39270 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39274 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39276 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39282 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39294 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39308 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39318 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39332 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39336 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39342 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39356 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39370 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39376 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39386 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39398 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39404 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39408 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39410 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39424 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39426 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39442 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39458 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39462 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39472 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39482 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39490 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53988 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53990 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54004 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:54014 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:54016 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59062 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59070 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:59078 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59080 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:59084 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59022 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59026 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:59042 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:59058 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:59070 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53292 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:53298 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53314 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:53326 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:53336 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:40294 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:36328 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:36340 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:36348 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:36352 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:36360 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43216 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43232 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43234 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43240 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43252 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43256 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43272 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43284 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43296 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43308 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43314 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43318 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43324 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57372 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57376 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57392 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57394 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:57396 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33462 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33470 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50682 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50694 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:50704 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:50716 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:50732 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:51518 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-11-30 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:51534 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:51540 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:51556 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:51572 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-12-01 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:42098 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42108 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42112 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:42114 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:42130 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43200 - "GET /api/participants HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-12-01 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:43206 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:43210 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:0 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
+INFO:     192.168.30.205:43224 - "GET /api/team-history HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 필터 적용: 2025-11-30 까지 16건 사용
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 16
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:49344 - "GET /api/cooccurrence?lam=0.7&as_of=2025-11-30T10:42:39.662005 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:49822 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:47310 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:33130 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:57516 - "GET /api/team-history HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39714 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39716 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39718 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39728 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38084 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:38092 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56688 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56696 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56706 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56716 - "GET /api/attending HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56728 - "POST /api/attendance HTTP/1.0" 200 OK
+INFO:     192.168.30.205:56736 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-12-02 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39618 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39620 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39622 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-12-02 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39634 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39636 - "GET /api/participants HTTP/1.0" 200 OK
+INFO:     192.168.30.205:39646 - "GET /api/attending HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-12-02 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39662 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK
+[디버깅] 팀 히스토리에서 데이터 로드 성공: data/team_history.json
+[디버깅] 히스토리 기록 수: 17
+[디버깅] as-of 미지정: 현재 날짜 2025-12-02 기준
+[디버깅] 기준 날짜 설정 (Week 1): 2025-06-01
+[디버깅] 처리된 기록 수: 17
+[디버깅] 생성된 공동 참여 데이터 참가자 수: 26
+INFO:     192.168.30.205:39676 - "GET /api/cooccurrence?lam=0.7 HTTP/1.0" 200 OK

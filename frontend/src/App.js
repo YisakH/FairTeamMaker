@@ -45,6 +45,13 @@ function App() {
     fetchAttendingParticipants();
     fetchCooccurrenceInfo();
     
+    // URL 해시를 확인하여 최근 결과 불러오기
+    const hash = window.location.hash.substring(1); // # 제거
+    if (hash === 'results') {
+      // 최근 팀 히스토리 불러와서 results 뷰로 이동
+      loadLatestTeamResult();
+    }
+    
     // Kakao SDK 초기화 - 스크립트 로딩을 기다림
     const initKakaoSDK = () => {
       if (window.Kakao) {
@@ -396,6 +403,28 @@ function App() {
     setView('results');
   };
 
+  // 가장 최근 팀 결과 불러오기 (URL 해시 처리용)
+  const loadLatestTeamResult = async () => {
+    try {
+      const requestUrl = `${API_BASE_URL}/team-history`;
+      console.log(`[API 요청] 최근 팀 결과: ${requestUrl}`);
+      const response = await axios.get(requestUrl);
+      const history = response.data.history;
+      
+      if (history && history.length > 0) {
+        // 가장 최근 기록을 불러옴 (배열의 마지막 요소가 가장 최근)
+        const latestTeam = history[history.length - 1];
+        loadHistoryTeam(latestTeam);
+      } else {
+        // 기록이 없으면 기본 뷰로
+        setView('attendance');
+      }
+    } catch (error) {
+      console.error('최근 팀 결과를 불러오는데 실패했습니다:', error);
+      setView('attendance');
+    }
+  };
+
   // 카카오톡으로 공유하기
   const shareToKakao = () => {
     console.log('shareToKakao called');
@@ -418,12 +447,16 @@ function App() {
       // 팀 정보를 텍스트로 포맷팅
       const teamText = formatTeamText();
       
+      // 현재 URL에 results 뷰로 이동하는 해시 추가
+      const currentUrl = window.location.origin + window.location.pathname;
+      const shareUrl = `${currentUrl}#results`;
+      
       window.Kakao.Share.sendDefault({
         objectType: 'text',
         text: teamText,
         link: {
-          mobileWebUrl: window.location.href,
-          webUrl: window.location.href,
+          mobileWebUrl: shareUrl,
+          webUrl: shareUrl,
         },
       });
       
@@ -568,7 +601,7 @@ function App() {
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               } py-2 px-2 border-b-2 font-medium text-xs sm:text-sm break-words basis-[48%] sm:basis-auto`}
             >
-              매칭 등급
+              조 매칭 정보
             </button>
           </nav>
         </div>
@@ -881,20 +914,20 @@ function App() {
               <div className="mb-3 p-2 bg-gray-50 rounded-md text-xs">
                 <div className="grid grid-cols-2 gap-1">
                   <div className="flex items-center">
-                    <span className="inline-block w-2 h-2 rounded-full bg-green-600 mr-1"></span>
-                    <span>0: 없음</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 rounded text-[10px] font-semibold bg-green-100 text-green-800 mr-1">A</span>
+                    <span>최우선 (새로운 만남)</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="inline-block w-2 h-2 rounded-full bg-blue-600 mr-1"></span>
-                    <span>25: 1회</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 rounded text-[10px] font-semibold bg-blue-100 text-blue-800 mr-1">B</span>
+                    <span>우선 (가끔 만남)</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="inline-block w-2 h-2 rounded-full bg-yellow-600 mr-1"></span>
-                    <span>50: 2회</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 rounded text-[10px] font-semibold bg-yellow-100 text-yellow-800 mr-1">C</span>
+                    <span>보통 (종종 만남)</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="inline-block w-2 h-2 rounded-full bg-red-600 mr-1"></span>
-                    <span>75-95: 3회 이상</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 rounded text-[10px] font-semibold bg-red-100 text-red-800 mr-1">D</span>
+                    <span>후순위 (자주 만남)</span>
                   </div>
                 </div>
               </div>
@@ -930,12 +963,12 @@ function App() {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
                               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                             </svg>
-                            상세 정보 보기
+                            이 조는 어떻게 짜졌냐면요...
                           </summary>
                           <div className="mt-2 space-y-2">
                             {group.map((member) => (
                               <div key={member} className="bg-white rounded-md p-2 shadow-sm">
-                                <div className="font-medium text-gray-900 mb-1 text-xs">{member} 페어 등급</div>
+                                <div className="font-medium text-gray-900 mb-1 text-xs">{member} 조 매칭 정보</div>
                                 <div className="text-xs text-gray-500 space-y-1">
                                   {group.map((other) => {
                                     if (other === member) return null;
@@ -1025,13 +1058,25 @@ function App() {
         {view === 'scores' && (
           <div className="bg-white rounded-lg shadow p-4 mb-6 overflow-auto">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-lg font-semibold">매칭 등급 기준표</h3>
+              <h3 className="text-lg font-semibold">조 매칭 정보</h3>
               <div className="text-xs text-gray-500">람다(λ): {lambdaValue}</div>
             </div>
 
+            <div className="mb-4 p-3 bg-blue-50 rounded-md border border-blue-200">
+              <div className="text-sm font-medium text-blue-900 mb-2">💡 조 매칭 등급 안내</div>
+              <div className="text-xs text-blue-800 space-y-1">
+                <p>• <strong>A등급 (최우선)</strong>: 처음 만나거나 오래전에 만난 조합 - 새로운 만남 우선</p>
+                <p>• <strong>B등급 (우선)</strong>: 가끔 만난 조합 - 적당한 빈도</p>
+                <p>• <strong>C등급 (보통)</strong>: 종종 만난 조합 - 보통 빈도</p>
+                <p>• <strong>D등급 (후순위)</strong>: 자주 만난 조합 - 가능하면 피함</p>
+                <p className="pt-1 border-t border-blue-300 text-blue-700">
+                  <strong>조 생성 시 A등급부터 우선적으로 고려하여 공정한 팀을 만듭니다.</strong>
+                </p>
+              </div>
+            </div>
+
             <div className="mb-2 text-xs text-gray-600">
-              <p>아래 등급에 기반하여 새로운 조가 만들어집니다.</p>
-              <p>등급 기준: 현재 참석자 쌍들의 내부 점수를 4단계로 나눠 A(높은 확률) → D(낮은 확률).</p>
+              <p>현재 참석자들 간의 과거 조 구성 이력을 바탕으로 매칭 등급을 표시합니다.</p>
             </div>
 
             {attendingParticipants.length < 2 ? (
@@ -1160,7 +1205,7 @@ function App() {
             )}
 
             <div className="mt-3 text-xs text-gray-500">
-              <p>등급은 현재 참석자 집합 내 상대적인 4분위 기준입니다.</p>
+              <p>등급은 현재 참석자들 간의 과거 만남 빈도를 4단계로 나눈 상대적 기준입니다.</p>
             </div>
           </div>
         )}

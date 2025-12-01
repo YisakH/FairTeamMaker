@@ -6,32 +6,32 @@ Attempting to bind to HOST environment variable: 0.0.0.0
 If this was unintentional, check that you haven't mistakenly set it in your shell.
 Learn more here: https://cra.link/advanced-config
 
-(node:61119) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
-(node:61119) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:75680) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:75680) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
 Compiled with warnings.
 
 [eslint] 
 src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
+  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                                                 no-unused-vars
+  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                                              no-unused-vars
+  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                                              no-unused-vars
+  Line 77:6:   React Hook useEffect has missing dependencies: 'fetchCooccurrenceInfo' and 'loadLatestTeamResult'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 89:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array                               react-hooks/exhaustive-deps
+  Line 353:9:  'deleteTodayData' is assigned a value but never used                                                                                                   no-unused-vars
 
 Search for the keywords to learn more about each warning.
 To ignore, add // eslint-disable-next-line to the line before.
 
 WARNING in [eslint] 
 src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
+  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                                                 no-unused-vars
+  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                                              no-unused-vars
+  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                                              no-unused-vars
+  Line 77:6:   React Hook useEffect has missing dependencies: 'fetchCooccurrenceInfo' and 'loadLatestTeamResult'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 89:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array                               react-hooks/exhaustive-deps
+  Line 353:9:  'deleteTodayData' is assigned a value but never used                                                                                                   no-unused-vars
 
 webpack compiled with 1 warning
 Compiling...
@@ -39,24 +39,24 @@ Compiled with warnings.
 
 [eslint] 
 src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
+  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                                                 no-unused-vars
+  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                                              no-unused-vars
+  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                                              no-unused-vars
+  Line 77:6:   React Hook useEffect has missing dependencies: 'fetchCooccurrenceInfo' and 'loadLatestTeamResult'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 89:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array                               react-hooks/exhaustive-deps
+  Line 353:9:  'deleteTodayData' is assigned a value but never used                                                                                                   no-unused-vars
 
 Search for the keywords to learn more about each warning.
 To ignore, add // eslint-disable-next-line to the line before.
 
 WARNING in [eslint] 
 src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
+  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                                                 no-unused-vars
+  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                                              no-unused-vars
+  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                                              no-unused-vars
+  Line 77:6:   React Hook useEffect has missing dependencies: 'fetchCooccurrenceInfo' and 'loadLatestTeamResult'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 89:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array                               react-hooks/exhaustive-deps
+  Line 353:9:  'deleteTodayData' is assigned a value but never used                                                                                                   no-unused-vars
 
 webpack compiled with 1 warning
 Compiling...
@@ -64,148 +64,23 @@ Compiled with warnings.
 
 [eslint] 
 src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
+  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                                                 no-unused-vars
+  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                                              no-unused-vars
+  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                                              no-unused-vars
+  Line 77:6:   React Hook useEffect has missing dependencies: 'fetchCooccurrenceInfo' and 'loadLatestTeamResult'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 89:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array                               react-hooks/exhaustive-deps
+  Line 353:9:  'deleteTodayData' is assigned a value but never used                                                                                                   no-unused-vars
 
 Search for the keywords to learn more about each warning.
 To ignore, add // eslint-disable-next-line to the line before.
 
 WARNING in [eslint] 
 src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-webpack compiled with 1 warning
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-webpack compiled with 1 warning
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-webpack compiled with 1 warning
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-webpack compiled with 1 warning
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-webpack compiled with 1 warning
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/App.js
-  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                    no-unused-vars
-  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                 no-unused-vars
-  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                 no-unused-vars
-  Line 70:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 82:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 346:9:  'deleteTodayData' is assigned a value but never used                                                                      no-unused-vars
+  Line 21:10:  'accumulateSameDay' is assigned a value but never used                                                                                                 no-unused-vars
+  Line 21:29:  'setAccumulateSameDay' is assigned a value but never used                                                                                              no-unused-vars
+  Line 23:10:  'hasExistingDataToday' is assigned a value but never used                                                                                              no-unused-vars
+  Line 77:6:   React Hook useEffect has missing dependencies: 'fetchCooccurrenceInfo' and 'loadLatestTeamResult'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 89:6:   React Hook useEffect has a missing dependency: 'fetchCooccurrenceInfo'. Either include it or remove the dependency array                               react-hooks/exhaustive-deps
+  Line 353:9:  'deleteTodayData' is assigned a value but never used                                                                                                   no-unused-vars
 
 webpack compiled with 1 warning
